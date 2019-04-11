@@ -217,6 +217,41 @@ taxon$tau <- 1/taxon_mean(dPar_all,'gravid_fed')$varmean  #Duration of the resti
 taxon$theta_f[is.na(taxon$theta_f)] <- with(taxon,tau[is.na(theta_f)]+(1/sac_rate[is.na(theta_f)])-1) 
 
 
+##################################################################################     
+# Add in the biting rhythm
+
+url2 <- 'http://raw.githubusercontent.com/SwissTPH/Anopheles-model/master/raw_data/bitingRhythm.xlsx'  
+
+# read species specific biting rhythms
+
+bitingRhythms <- read.csv(file=paste0(dataSource,"biting_rhythm.csv"),sep=";") 
+
+source ('calculate_Pii.r')
+
+# AVERAGING OF BITING RHYTHMS FOR ESTIMATING pii 
+
+average_biting_rhythms <- function(species, Location=NULL,	StudyID=NULL,	country=NULL,	Site=NULL,	Season=NULL){
+  rspecies <- which(biting_rhythm$species == species)
+  rLocation <- rStudyID <- rCountry <- rSite <- rSeason <- rspecies
+  if (!is.null(Location)) {rLocation <- which(biting_rhythm$Location %in% Location)} 
+  if (!is.null(StudyID)) {rStudyID <- which(biting_rhythm$StudyID %in% StudyID)}
+  if (!is.null(Country)) {rCountry <- which(biting_rhythm$country %in% country)}
+  if (!is.null(Site)) {rSite <- which(biting_rhythm$Site %in% Site)}
+  if (!is.null(Season)) {rSeason <- which(biting_rhythm$Season %in% Season)}
+  rrhythms <- biting_rhythm[Reduce(intersect,list(rspecies,rLocation,rStudyID,rCountry,rSite,rSeason)),8:20]  
+  average_rhythm <- NULL
+  if (length(rrhythms[1]) == 1) average_rhythm <- rrhythms
+  if (length(rrhythms[1]) > 1) average_rhythm <- colMeans(as.numeric(rrhythms), na.rm=TRUE)
+  return(average_rhythm)  
+}
+
+
+# for the moment assume the same rhythm indoor and outdoor
+# change this to use separate indoor outdoor data where available
+taxon$Indoor <- taxon$Endophagy * average_biting_rhythms(species=vectorName)
+taxon$Outdoor <- (1 - taxon$Endophagy) * average_biting_rhythms(species=vectorName)
+
+
 ############### FROM HERE ON NEEDS AMENDMENT
 
 # POPULATE PROPORTION INDOOR RESTING 
@@ -224,7 +259,7 @@ taxon$theta_f[is.na(taxon$theta_f)] <- with(taxon,tau[is.na(theta_f)]+(1/sac_rat
 # Select endophily data
 bionomicsData$variable[bionomicsData$variable == 'IR/IB'] <- 'IR/(totalB)'
 EndophilyData <- bionomicsData[ which(bionomicsData$variable=='IR/(totalB)'), ]
-table(EndophilyData$Species,EndophilyData$Site)
+table(EndophilyData$species,EndophilyData$Site)
 
 Endo <- with(dPar,taxon,)
 Endo$logendo <- log(dPar$proportion_indoor_resting+0.001)
@@ -254,47 +289,12 @@ taxon$proportion_indoor_resting <- taxon$Endophily/(1 + taxon[[i]]$Endophily)
 
 # POPULATE taxon WITH ENDOPHAGY DATA
 logitendo <- log(EndophagyData$value/(1.01-EndophagyData$value))
-model1 <- lme(logitendo~0 + Species,random=~1|Site,method="REML")
+model1 <- lme(logitendo~0 + species,random=~1|Site,method="REML")
 summary(model1)
 logitEndophagy<-model1$coefficients$fixed
 taxon$Endophagy<- 1/(1+exp(-logitEndophagy))
 
 
 
-
-
-##################################################################################     
-# Add in the biting rhythm
-
-url2 <- 'http://raw.githubusercontent.com/SwissTPH/Anopheles-model/master/raw_data/bitingRhythm.xlsx'  
-
-# read species specific biting rhythms
-
-bitingRhythms <- read.csv(file=paste0(dataSource,"bitingRhythm.csv")) 
-
-source ('calculate_Pii.r')
-
-# AVERAGING OF BITING RHYTHMS FOR ESTIMATING pii 
-
-average_biting_rhythms <- function(Species, Location=NULL,	StudyID=NULL,	Country=NULL,	Site=NULL,	Season=NULL){
-  rSpecies <- which(biting_rhythm$Species == Species)
-  rLocation <- rStudyID <- rCountry <- rSite <- rSeason <- rSpecies
-  if (!is.null(Location)) {rLocation <- which(biting_rhythm$Location %in% Location)} 
-  if (!is.null(StudyID)) {rStudyID <- which(biting_rhythm$StudyID %in% StudyID)}
-  if (!is.null(Country)) {rCountry <- which(biting_rhythm$Country %in% Country)}
-  if (!is.null(Site)) {rSite <- which(biting_rhythm$Site %in% Site)}
-  if (!is.null(Season)) {rSeason <- which(biting_rhythm$Season %in% Season)}
-  rrhythms <- biting_rhythm[Reduce(intersect,list(rSpecies,rLocation,rStudyID,rCountry,rSite,rSeason)),8:20]  
-  average_rhythm <- NULL
-  if (length(rrhythms[1]) == 1) average_rhythm <- rrhythms
-  if (length(rrhythms[1]) > 1) average_rhythm <- colMeans(as.numeric(rrhythms), na.rm=TRUE)
-  return(average_rhythm)  
-}
-
-
-  # for the moment assume the same rhythm indoor and outdoor
-# change this to use separate indoor outdoor data where available
-  taxon$Indoor <- taxon$Endophagy * average_biting_rhythms(Species=vectorName)
-  taxon$Outdoor <- (1 - taxon$Endophagy) * average_biting_rhythms(Species=vectorName)
 
 
