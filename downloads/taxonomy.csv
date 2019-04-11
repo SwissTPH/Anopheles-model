@@ -1,0 +1,519 @@
+Taxon_no;Subgenus;Section;Series;Group;Complex;taxon;Vector;Author;Subspecies
+1;Anopheles;;;;;Anopheles anthropophagus;TRUE;Xu & Feng 1975;
+15;Anopheles;Angusticorn;Anopheles;;Claviger;Anopheles claviger;TRUE;Meigen 1804;
+65;Anopheles;Angusticorn;Anopheles;;Quadrimaculatus;Anopheles quadrimaculatus;TRUE;Say 1824;
+67;Anopheles;Angusticorn;Anopheles;;Freeborni;Anopheles freeborni;TRUE;Aitken 1939;
+70;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles atroparvus;TRUE;Van Thiel 1927;
+73;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles labranchiae;TRUE;Falleroni 1926;
+76;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles melanoon;TRUE;Hackett 1934;
+77;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles messeae;TRUE;Falleroni 1926;
+80;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles sacharovi;TRUE;Favre 1903;
+89;Anopheles;Angusticorn;Anopheles;Plumbeus;;Anopheles plumbeus;TRUE;Stegnii & Kabanova 1828;
+99;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles parapunctipennis;TRUE;Martini 1932;
+137;Anopheles;Laticorn;Arribalzagia;;;Anopheles intermedius;TRUE;Peryassu 1908;
+155;Anopheles;Laticorn;Myzorhynchus;;;Anopheles barbirostris;TRUE;van der Wulp 1884;
+199;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles hyrcanus;TRUE;Pallas;
+209;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles sinensis;TRUE;Wiedemann 1826;
+220;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;Nigerrimus;Anopheles nigerrimus;TRUE;Giles 1900;
+231;Anopheles;Laticorn;Myzorhynchus;Umbrosus;Letifer;Anopheles letifer;TRUE;Sandosham 1944;
+258;Cellia;Myzomyia;;;;Anopheles moucheti;TRUE;;
+271;Cellia;Myzomyia;;Demeilloni;;Anopheles sergentii;TRUE;;
+280;Cellia;Myzomyia;;Funestus;Culicifacies;Anopheles culicifacies;TRUE;;
+283;Cellia;Myzomyia;;Funestus;Funestus;Anopheles funestus;TRUE;;
+284;Cellia;Myzomyia;;Funestus;Funestus;Anopheles funestus-like;TRUE;;
+288;Cellia;Myzomyia;;Funestus;Minimus;Anopheles flavirostris;TRUE;;
+291;Cellia;Myzomyia;;Funestus;Minimus;Anopheles fluviatilis;TRUE;;
+293;Cellia;Myzomyia;;Funestus;Minimus;Anopheles minimus;TRUE;;
+296;Cellia;Myzomyia;;Funestus;Rivulorum;Anopheles rivulorum;TRUE;;
+323;Cellia;Neocellia;;;;Anopheles karwari;TRUE;;
+329;Cellia;Neocellia;;;;Anopheles pulcherrimus;TRUE;;
+336;Cellia;Neocellia;;;Stephensi;Anopheles stephensi;TRUE;;
+337;Cellia;Neocellia;;;Superpictus;Anopheles superpictus;TRUE;;
+339;Cellia;Neocellia;;Annularis;;Anopheles philippinensis;TRUE;;
+341;Cellia;Neocellia;;Annularis;Annularis;Anopheles annularis;TRUE;;
+352;Cellia;Neocellia;;Maculatus;Maculatus;Anopheles maculatus;TRUE;;
+376;Cellia;Neomyzomyia;;;punctulatus;Anopheles farauti;TRUE;;
+379;Cellia;Neomyzomyia;;;punctulatus;Anopheles koliensis;TRUE;;
+380;Cellia;Neomyzomyia;;;punctulatus;Anopheles punctulatus;TRUE;;
+396;Cellia;Neomyzomyia;;Ardensis;Nili;Anopheles nili;TRUE;;
+407;Cellia;Neomyzomyia;;Leucosphyrus;Hackeri;Anopheles sulawesi;TRUE;;
+408;Cellia;Neomyzomyia;;Leucosphyrus;;Anopheles baimaii;TRUE;;
+411;Cellia;Neomyzomyia;;Leucosphyrus;Dirus;Anopheles dirus;TRUE;;
+414;Cellia;Neomyzomyia;;Leucosphyrus;Leucosphyrus;Anopheles balabacensis;TRUE;;
+416;Cellia;Neomyzomyia;;Leucosphyrus;Leucosphyrus;Anopheles latens;TRUE;;
+417;Cellia;Neomyzomyia;;Leucosphyrus;Leucosphyrus;Anopheles leucosphyrus;TRUE;;
+433;Cellia;Paramyzomyia;;Listeri;;Anopheles multicolor;TRUE;;
+444;Cellia;Pyretophorus;;;;Anopheles vagus;TRUE;;
+445;Cellia;Pyretophorus;;;Gambiae;Anopheles arabiensis;TRUE;;
+448;Cellia;Pyretophorus;;;Gambiae;Anopheles gambiae;TRUE;;
+449;Cellia;Pyretophorus;;;Gambiae;Anopheles coluzzii ;TRUE;Coetzee & Wilkerson 2013;
+450;Cellia;Pyretophorus;;;Gambiae;Anopheles melas;TRUE;;
+454;Cellia;Pyretophorus;;;Subpictus;Anopheles subpictus;TRUE;;
+456;Cellia;Pyretophorus;;;Sundaicus;Anopheles sundaicus;TRUE;;
+459;Kerteszia;;;;;Anopheles bellator;TRUE;;
+461;Kerteszia;;;;;Anopheles cruzii;TRUE;;
+463;Kerteszia;;;;;Anopheles homunculus;TRUE;;
+477;Nyssorhynchus;Albimanus;Albimanus;;;Anopheles albimanus;TRUE;;
+479;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Oswaldoi;Anopheles aquasalis;TRUE;;
+490;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Nuneztovar;Anopheles nuneztovari;TRUE;;
+492;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Strodel;Anopheles arthuri;TRUE;;
+503;Nyssorhynchus;Argyritarsis;Albitarsus;Albitarsus;;Anopheles marajoara;TRUE;;
+507;Nyssorhynchus;Argyritarsis;Argyritarsis;Darlingi;;Anopheles darlingi;TRUE;;
+2;Anopheles;;;;;Anopheles confusa;FALSE;Bonne-Wepster 1951;
+3;Anopheles;;;;;Anopheles derooki;FALSE;Soesilo & Van Slooten 1931;
+4;Anopheles;;;;;Anopheles gracilis;FALSE;Theobald 1905;
+5;Anopheles;;;;;Anopheles hollandi;FALSE;Taylor 1934;
+6;Anopheles;;;;;Anopheles obscura;FALSE;Tenorio 1975;
+7;Anopheles;;;;;Anopheles papuae;FALSE;Swellengrebel & Swellengrebel de Graaf 1919;
+8;Anopheles;;;;;Anopheles simmondsi;FALSE;Tenorio 1977;
+9;Anopheles;;;;;Anopheles travestita;FALSE;Brug 1928;
+10;Anopheles;Angusticorn;Anopheles;;;Anopheles algeriensis;FALSE;Theobald 1903;
+11;Anopheles;Angusticorn;Anopheles;;;Anopheles concolor;FALSE;Edwards 1938;
+12;Anopheles;Angusticorn;Anopheles;;;Anopheles marteri;FALSE;SenevetPrunnelle1927;
+13;Anopheles;Angusticorn;Anopheles;;;Anopheles marteri;FALSE;SenevetPrunnelle1927;marteri
+14;Anopheles;Angusticorn;Anopheles;;;Anopheles marteri;FALSE;SenevetPrunnelle1927;sogdianus Keshishian
+16;Anopheles;Angusticorn;Anopheles;;Claviger;Anopheles petragnani;FALSE;Del Vecchio 1939;
+17;Anopheles;Angusticorn;Anopheles; Aitkenii ;;Anopheles aberrans;FALSE;Harrison & Scanlon 1975;
+18;Anopheles;Angusticorn;Anopheles; Aitkenii ;;Anopheles acaci;FALSE;Baisas 1946;
+19;Anopheles;Angusticorn;Anopheles; Aitkenii ;;Anopheles aitkenii;FALSE;James 1903;
+20;Anopheles;Angusticorn;Anopheles; Aitkenii ;;Anopheles bengalensis;FALSE;Puri 1930;
+21;Anopheles;Angusticorn;Anopheles; Aitkenii ;;Anopheles borneensis;FALSE;McArthur 1949;
+22;Anopheles;Angusticorn;Anopheles; Aitkenii ;;Anopheles fragilis;FALSE;Theobald 1903;
+23;Anopheles;Angusticorn;Anopheles; Aitkenii ;;Anopheles insulaeflorum;FALSE;Swellengrebel & Swellengrebel de Graaf 1919;
+24;Anopheles;Angusticorn;Anopheles; Aitkenii ;;Anopheles palmatus;FALSE;Rodenwaldt 1926;
+25;Anopheles;Angusticorn;Anopheles; Aitkenii ;;Anopheles peytoni;FALSE;Kulasekera;
+26;Anopheles;Angusticorn;Anopheles; Aitkenii ;;Anopheles pilinotum;FALSE;Harrison & Scanlon 1974;
+27;Anopheles;Angusticorn;Anopheles; Aitkenii ;;Anopheles pinjaurensis;FALSE;Barraud 1932;
+28;Anopheles;Angusticorn;Anopheles; Aitkenii ;;Anopheles stricklandi;FALSE;Reid 1965;
+29;Anopheles;Angusticorn;Anopheles; Aitkenii ;;Anopheles tigertti;FALSE;Scanlon & Peyton 1967;
+30;Anopheles;Angusticorn;Anopheles;Alongensis;;Anopheles alongensis;FALSE;Evenhuis 1940;
+31;Anopheles;Angusticorn;Anopheles;Alongensis;;Anopheles cucphuongensis;FALSE;Phan;
+32;Anopheles;Angusticorn;Anopheles; Atratipes;;Anopheles atratipes;FALSE;Skuse 1889;
+33;Anopheles;Angusticorn;Anopheles; Atratipes;;Anopheles tasmaniensis;FALSE;Dobrowtorsky 1966;
+34;Anopheles;Angusticorn;Anopheles;Culiciformis;;Anopheles culiciformis;FALSE;Cogill 1903;
+35;Anopheles;Angusticorn;Anopheles;Culiciformis;;Anopheles sintoni;FALSE;Puri 1929;
+36;Anopheles;Angusticorn;Anopheles;Culiciformis;;Anopheles sintonoides;FALSE;Ho 1938;
+37;Anopheles;Angusticorn;Anopheles;Lindesayi ;;Anopheles mengalengensis;FALSE;Ma 1981;
+38;Anopheles;Angusticorn;Anopheles;Lindesayi ;;Anopheles nilgiricus;FALSE;Christophers 1924;
+39;Anopheles;Angusticorn;Anopheles;Lindesayi ;;Anopheles wellingtonianus;FALSE;Alcock 1912;
+40;Anopheles;Angusticorn;Anopheles;;Gigas;Anopheles baileyi;FALSE;Edwards 1923;
+41;Anopheles;Angusticorn;Anopheles;;Gigas;Anopheles gigas;FALSE;Giles 1901;
+42;Anopheles;Angusticorn;Anopheles;;Gigas;Anopheles gigas;FALSE;Giles 1901;crockeri Colless
+43;Anopheles;Angusticorn;Anopheles;;Gigas;Anopheles gigas;FALSE;Giles 1901;danaubento Mochtar & Walandouw
+44;Anopheles;Angusticorn;Anopheles;;Gigas;Anopheles gigas;FALSE;Giles 1901;formosus Ludlow
+45;Anopheles;Angusticorn;Anopheles;;Gigas;Anopheles gigas;FALSE;Giles 1901;gigas Giles
+46;Anopheles;Angusticorn;Anopheles;;Gigas;Anopheles gigas;FALSE;Giles 1901;oedjalikalah Nainggolan
+47;Anopheles;Angusticorn;Anopheles;;Gigas;Anopheles gigas;FALSE;Giles 1901;pantjarbatu Waktoedi
+48;Anopheles;Angusticorn;Anopheles;;Gigas;Anopheles gigas;FALSE;Giles 1901;refutans Alcock
+49;Anopheles;Angusticorn;Anopheles;;Gigas;Anopheles gigas;FALSE;Giles 1901;simlensis James
+50;Anopheles;Angusticorn;Anopheles;;Gigas;Anopheles gigas;FALSE;Giles 1901;sumatrana Swellengrebel & Rodenwaldt
+51;Anopheles;Angusticorn;Anopheles;;Lindesayi ;Anopheles lindesayi;FALSE;Giles 1900;
+52;Anopheles;Angusticorn;Anopheles;;Lindesayi ;Anopheles lindesayi;FALSE;Giles 1900;benguetensis King
+53;Anopheles;Angusticorn;Anopheles;;Lindesayi ;Anopheles lindesayi;FALSE;Giles 1900;cameronensis Edwards
+54;Anopheles;Angusticorn;Anopheles;;Lindesayi ;Anopheles lindesayi;FALSE;Giles 1900;japonicus Yamada
+55;Anopheles;Angusticorn;Anopheles;;Lindesayi ;Anopheles lindesayi;FALSE;Giles 1900;lindesayi Giles
+56;Anopheles;Angusticorn;Anopheles;;Lindesayi ;Anopheles lindesayi;FALSE;Giles 1900;pleccau Koidzumi
+57;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles atropos;FALSE;Dyar & Knab 1906;
+58;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles aztecus;FALSE;Hoffmann 1935;
+59;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles lewisi;FALSE;Ludlow 1920;
+60;Anopheles;Angusticorn;Anopheles;;;Anopheles walkeri;FALSE;;
+61;Anopheles;Angusticorn;Anopheles;;Quadrimaculatus;Anopheles diluvialis;FALSE;Reinert 1997;
+62;Anopheles;Angusticorn;Anopheles;;Quadrimaculatus;Anopheles inundatus;FALSE;Reinert 1997;
+63;Anopheles;Angusticorn;Anopheles;;Quadrimaculatus;Anopheles maverlius;FALSE;Reinert 1997;
+64;Anopheles;Angusticorn;Anopheles;;Quadrimaculatus;Anopheles smaragdinus;FALSE;Reinert 1997;
+66;Anopheles;Angusticorn;Anopheles;;Freeborni;Anopheles earlei;FALSE;Vargas 1943;
+68;Anopheles;Angusticorn;Anopheles;;Freeborni;Anopheles hermsi;FALSE;Barr & Guptavanij 1989;
+69;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles artemievi;FALSE;Gordeyev;
+71;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles beklemishevi;FALSE;Stegnii & Kabanova 1976;
+72;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles daciae;FALSE;Linton;
+74;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles maculipennis;FALSE;Meigen1918;
+75;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles martinius;FALSE;Shingarev 1926;
+78;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles occidentalis;FALSE;Dyar & Knab 1907;
+79;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles persiensis;FALSE;Linton;
+81;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles sicaulti;FALSE;Roubaud 1935;
+82;Anopheles;Angusticorn;Anopheles;;Maculipennis;Anopheles subalpinus;FALSE;Hackett & Lewis 1935;
+83;Anopheles;Angusticorn;Anopheles;Plumbeus;;Anopheles arboricola;FALSE;Zavortink 1970;
+84;Anopheles;Angusticorn;Anopheles;Plumbeus;;Anopheles barberi;FALSE;Coquillett 1903;
+85;Anopheles;Angusticorn;Anopheles;Plumbeus;;Anopheles barianensis;FALSE;James 1911;
+86;Anopheles;Angusticorn;Anopheles;Plumbeus;;Anopheles fausti;FALSE;Vargas 1943;
+87;Anopheles;Angusticorn;Anopheles;Plumbeus;;Anopheles judithae;FALSE;Zavortink 1969;
+88;Anopheles;Angusticorn;Anopheles;Plumbeus;;Anopheles omorii;FALSE;Sakakibara 1959;
+90;Anopheles;Angusticorn;Anopheles;Plumbeus;;Anopheles powderi;FALSE;Zavortink 1970;
+91;Anopheles;Angusticorn;Anopheles;Plumbeus;;Anopheles xelajuensis;FALSE;De Leon 1938;
+92;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles chiriquiensis;FALSE;Komp 1936;
+93;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles franciscanus;FALSE;McCracken 1904;
+94;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles hectoris;FALSE;Giaquinto-Mira 1931;
+95;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles tibiamaculatus;FALSE;Neiva 1906;
+96;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles eiseni;FALSE;Coquillett 1902;
+97;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles eiseni;FALSE;Coquillett 1902;eiseni Coquillett
+98;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles eiseni;FALSE;Coquillett 1902;geometricus Corrêa
+100;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles parapunctipennis;FALSE;Martini 1932;guatemalensis de Leon
+101;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles parapunctipennis;FALSE;Martini 1932;parapunctipennis Martini
+102;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles pseudopunctipennis;FALSE;Theobald1901;
+103;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles pseudopunctipennis;FALSE;Theobald1901;levicastilloi Levi-Castillo
+104;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles pseudopunctipennis;FALSE;Theobald1901;neghmei Mann
+105;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles pseudopunctipennis;FALSE;Theobald1901;noei Mann
+106;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles pseudopunctipennis;FALSE;Theobald1901;patersoni Alvarado & Heredia
+107;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles pseudopunctipennis;FALSE;Theobald1901;pseudopunctipennis Theobald
+108;Anopheles;Angusticorn;Anopheles;Pseudopunctipennis;;Anopheles pseudopunctipennis;FALSE;Theobald1901;rivadeneirai Levi-Castillo
+109;Anopheles;Angusticorn;Anopheles;Punctipennis;;Anopheles perplexens;FALSE;Ludlow 1907;
+110;Anopheles;Angusticorn;Anopheles;Punctipennis;;Anopheles punctipennis;FALSE;Say 1823;
+111;Anopheles;Angusticorn;Anopheles;Punctipennis;Crucians;Anopheles bradleyi;FALSE;King 1939;
+112;Anopheles;Angusticorn;Anopheles;Punctipennis;Crucians;Anopheles crucians;FALSE;Wiedemann 1826;
+113;Anopheles;Angusticorn;Anopheles;Punctipennis;Crucians;Anopheles georgianus;FALSE;King 1939;
+114;Anopheles;Angusticorn;Anopheles;Stigmaticus;;Anopheles colledgei;FALSE;Marks 1956;
+115;Anopheles;Angusticorn;Anopheles;Stigmaticus;;Anopheles corethroides;FALSE;Theobald 1907;
+116;Anopheles;Angusticorn;Anopheles;Stigmaticus;;Anopheles papuensis;FALSE;Dobrowtorsky 1957;
+117;Anopheles;Angusticorn;Anopheles;Stigmaticus;;Anopheles powelli;FALSE;Lee 1944;
+118;Anopheles;Angusticorn;Anopheles;Stigmaticus;;Anopheles pseudostigmaticus;FALSE;Dobrowtorsky 1957;
+119;Anopheles;Angusticorn;Anopheles;Stigmaticus;;Anopheles stigmaticus;FALSE;Skuse 1889;
+120;Anopheles;Angusticorn;Cycloleppteron;;;Anopheles annulipalpis;FALSE;Lynch 1878;
+121;Anopheles;Angusticorn;Cycloleppteron;;;Anopheles grabhamii;FALSE;Theobald1901;
+122;Anopheles;Angusticorn;Lophoscelomyia;;;Anopheles bulkleyi;FALSE;Causey 1937;
+123;Anopheles;Angusticorn;Lophoscelomyia;Asiaticus;;Anopheles annandalei;FALSE;Prashad 1918;
+124;Anopheles;Angusticorn;Lophoscelomyia;Asiaticus;;Anopheles noniae;FALSE;Reid 1963;
+125;Anopheles;Angusticorn;Lophoscelomyia;Asiaticus;;Anopheles asiaticus;FALSE;Leicester 1903;
+126;Anopheles;Angusticorn;Lophoscelomyia;Asiaticus;;Anopheles interruptus;FALSE;Puri 1929;
+127;Anopheles;Laticorn;Arribalzagia;;;Anopheles anchietai;FALSE;Correa & Ramalho 1968;
+128;Anopheles;Laticorn;Arribalzagia;;;Anopheles apicimacula;FALSE;Dyar & Knab 1908;
+129;Anopheles;Laticorn;Arribalzagia;;;Anopheles bustamentei;FALSE;Galvao 1955;
+130;Anopheles;Laticorn;Arribalzagia;;;Anopheles calderoni;FALSE;Wilkerson 1991;
+131;Anopheles;Laticorn;Arribalzagia;;;Anopheles costai;FALSE;Da Fonseca & Da Silva Ramos 1939;
+132;Anopheles;Laticorn;Arribalzagia;;;Anopheles evandroi;FALSE;Da Costa Lima 1937;
+133;Anopheles;Laticorn;Arribalzagia;;;Anopheles fluminensis;FALSE;Root 1927;
+134;Anopheles;Laticorn;Arribalzagia;;;Anopheles forattinii;FALSE;Wilkerson 1999;
+135;Anopheles;Laticorn;Arribalzagia;;;Anopheles gabaldoni;FALSE;Vargas 1941;
+136;Anopheles;Laticorn;Arribalzagia;;;Anopheles guarao;FALSE;Anduze & Capdevielle 1949;
+138;Anopheles;Laticorn;Arribalzagia;;;Anopheles maculipes;FALSE;Theobald 1903;
+139;Anopheles;Laticorn;Arribalzagia;;;Anopheles malefactor;FALSE;Dyar & Knab 1909;
+140;Anopheles;Laticorn;Arribalzagia;;;Anopheles mattogrossensis;FALSE;Lutz & Neiva 1911;
+141;Anopheles;Laticorn;Arribalzagia;;;Anopheles mediopunctatus;FALSE;Lutz 1903;
+142;Anopheles;Laticorn;Arribalzagia;;;Anopheles minor;FALSE;Da Costa Lima 1938;
+143;Anopheles;Laticorn;Arribalzagia;;;Anopheles neomaculipalpis;FALSE;Curry 1931;
+144;Anopheles;Laticorn;Arribalzagia;;;Anopheles peryassui;FALSE;Dyar & Knab 1910;
+145;Anopheles;Laticorn;Arribalzagia;;;Anopheles pseudomaculipes;FALSE;Peryassu 1908;
+146;Anopheles;Laticorn;Arribalzagia;;;Anopheles punctimacula;FALSE;Dyar & Knab 1911;
+147;Anopheles;Laticorn;Arribalzagia;;;Anopheles mediopunctatus;FALSE;Lutz 1903;
+148;Anopheles;Laticorn;Arribalzagia;;;Anopheles rachoui;FALSE;Galvao 1952;
+149;Anopheles;Laticorn;Arribalzagia;;;Anopheles shannoni;FALSE;Davis 1931;
+150;Anopheles;Laticorn;Arribalzagia;;;Anopheles veruslanei;FALSE;Vargas 1979;
+151;Anopheles;Laticorn;Arribalzagia;;;Anopheles vestitipennis;FALSE;Dyar & Knab 1912;
+152;Anopheles;Laticorn;Christya;;;Anopheles implexus;FALSE;Theobald 1903;
+153;Anopheles;Laticorn;Christya;;;Anopheles okuensis;FALSE;Brunhes;
+154;Anopheles;Laticorn;Myzorhynchus;;;Anopheles obscurus;FALSE;Grunberg 1905;
+156;Anopheles;Laticorn;Myzorhynchus;;;Anopheles pollicaris;FALSE;Reid 1962;
+157;Anopheles;Laticorn;Myzorhynchus;Albotaeniatus;;Anopheles albotaeniatus;FALSE;Theobald 1903;
+158;Anopheles;Laticorn;Myzorhynchus;Albotaeniatus;;Anopheles balerensis;FALSE;Mendoza 1947;
+159;Anopheles;Laticorn;Myzorhynchus;Albotaeniatus;;Anopheles ejercitoi;FALSE;Mendoza 1947;
+160;Anopheles;Laticorn;Myzorhynchus;Albotaeniatus;;Anopheles montanus;FALSE;Stanton & Hacker 1917;
+161;Anopheles;Laticorn;Myzorhynchus;Albotaeniatus;;Anopheles saperoi;FALSE;Bohart & Ingram 1946;
+162;Anopheles;Laticorn;Myzorhynchus;Albotaeniatus;;Anopheles saperoi;FALSE;Bohart & Ingram 1947; ohamai Ohama
+163;Anopheles;Laticorn;Myzorhynchus;Albotaeniatus;;Anopheles saperoi;FALSE;Bohart & Ingram 1948; saperoi Bohart & Ingram
+164;Anopheles;Laticorn;Myzorhynchus;Bancroftii;;Anopheles pseudobarbirostris;FALSE;Ludlow 1935;
+165;Anopheles;Laticorn;Myzorhynchus;Bancroftii;;Anopheles bancroftii;FALSE;Giles 1902;
+166;Anopheles;Laticorn;Myzorhynchus;Bancroftii;;Anopheles bancroftii;FALSE;Giles 1902;bancroftii Giles
+167;Anopheles;Laticorn;Myzorhynchus;Bancroftii;;Anopheles bancroftii;FALSE;Giles 1902;barbiventris Brug
+168;Anopheles;Laticorn;Myzorhynchus;Barbirostris;;Anopheles freyi;FALSE;Meng 1957;
+169;Anopheles;Laticorn;Myzorhynchus;Barbirostris;;Anopheles koreicus;FALSE;Yamada;
+170;Anopheles;Laticorn;Myzorhynchus;Barbirostris;Barbirostris;Anopheles barbirostris;FALSE;van der Wulp 1884;
+171;Anopheles;Laticorn;Myzorhynchus;Barbirostris;Barbirostris;Anopheles campestris;FALSE;Reid 1962;
+172;Anopheles;Laticorn;Myzorhynchus;Barbirostris;Barbirostris;Anopheles donaldi;FALSE;Reid 1962;
+173;Anopheles;Laticorn;Myzorhynchus;Barbirostris;Barbirostris;Anopheles franciscoi;FALSE;Reid 1962;
+174;Anopheles;Laticorn;Myzorhynchus;Barbirostris;Barbirostris;Anopheles hodgkini;FALSE;Reid 1962;
+175;Anopheles;Laticorn;Myzorhynchus;Barbirostris;Barbirostris;Anopheles pollicaris;FALSE;Reid 1962;
+176;Anopheles;Laticorn;Myzorhynchus;Barbirostris;Vanus;Anopheles ahomi;FALSE;Chowdhury 1929;
+177;Anopheles;Laticorn;Myzorhynchus;Barbirostris;Vanus;Anopheles barbumbrosus;FALSE;Strickland & Chowdhury 1927;
+178;Anopheles;Laticorn;Myzorhynchus;Barbirostris;Vanus;Anopheles manalangi;FALSE;Mendoza 1940;
+179;Anopheles;Laticorn;Myzorhynchus;Barbirostris;Vanus;Anopheles reidi;FALSE;Harrison 1973;
+180;Anopheles;Laticorn;Myzorhynchus;Barbirostris;Vanus;Anopheles vanus;FALSE;Walker 1859;
+181;Anopheles;Laticorn;Myzorhynchus;Coustani;;Anopheles caliginosus;FALSE;De Meillon 1943;
+182;Anopheles;Laticorn;Myzorhynchus;Coustani;;Anopheles coustani;FALSE;Laveran 1900;
+183;Anopheles;Laticorn;Myzorhynchus;Coustani;;Anopheles crypticus;FALSE;Coetzee 1994;
+184;Anopheles;Laticorn;Myzorhynchus;Coustani;;Anopheles fuscicolor;FALSE;Van Someren 1947;
+185;Anopheles;Laticorn;Myzorhynchus;Coustani;;Anopheles namibiensis;FALSE;Coetzee 1984;
+186;Anopheles;Laticorn;Myzorhynchus;Coustani;;Anopheles paludis;FALSE;Theobald 1900;
+187;Anopheles;Laticorn;Myzorhynchus;Coustani;;Anopheles symesi;FALSE;Edwards 1928;
+188;Anopheles;Laticorn;Myzorhynchus;Coustani;;Anopheles tenebrosus;FALSE;Donitz 1902;
+189;Anopheles;Laticorn;Myzorhynchus;Coustani;;Anopheles ziemanni;FALSE;Grunberg 1902;
+190;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles anthropophagus;FALSE;Xu & Feng 1975;
+191;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles argyropus;FALSE;Swellengrebel 1914;
+192;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles belenrae;FALSE;Rueda 2005;
+193;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles changfus;FALSE;Ma 1981;
+194;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles chodukini;FALSE;Martini 1929;
+195;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles dazhaius;FALSE;Ma 1981;
+196;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles engarensis;FALSE;Kanda & Oguma 1978;
+197;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles hailarensis;FALSE;Xu JinJiang & Luo XinFu 1998;
+198;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles heiheensis;FALSE;Ma 1981;
+200;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles junlianensis;FALSE;Lei 1996;
+201;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles kiangsuensis;FALSE;Xu & Feng 1975;
+202;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles kleini;FALSE;Rueda 2005;
+203;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles kummingensis;FALSE;Dong & Wang 1985;
+204;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles kweiyangensis;FALSE;Yao & Wu 1944;
+205;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles liangshanensis;FALSE;Kang Tan Cao Cheng Yang & Huang 1984;
+206;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles nimpe;FALSE;Nguyen;
+207;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles pseudopictus;FALSE;Graham 1899;
+208;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles pullus;FALSE;Yamada 1937;
+210;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles sineroides;FALSE;Yamada 1924;
+211;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles xiaokuanus;FALSE;Ma 1981;
+212;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles xui;FALSE;Dong;
+213;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;;Anopheles yatsushiroensis;FALSE;Miyazaki 1951;
+214;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;Lesteri ;Anopheles crawfordi;FALSE;Reid 1953;
+215;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;Lesteri ;Anopheles kiangsuensis;FALSE;Xu & Feng 1975;
+216;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;Lesteri ;Anopheles lesteri;FALSE;De Meillon 1931;
+217;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;Lesteri ;Anopheles paraliae;FALSE;Sandosham 1959;
+218;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;Lesteri ;Anopheles peditaeniatus;FALSE;Leicester 1908;
+219;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;Lesteri ;Anopheles vietnamensis;FALSE;Manh Hinh & Vien 1993;
+221;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;Nigerrimus;Anopheles nitidus;FALSE;Harrison;
+222;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;Nigerrimus;Anopheles pseudosinensis;FALSE;Baisas 1935;
+223;Anopheles;Laticorn;Myzorhynchus;Hyrcanus;Nigerrimus;Anopheles pursati;FALSE;Laveran 1902;
+224;Anopheles;Laticorn;Myzorhynchus;Umbrosus;;Anopheles brevipalpis;FALSE;Roper 1914;
+225;Anopheles;Laticorn;Myzorhynchus;Umbrosus;;Anopheles brevirostris;FALSE;Reid 1950;
+226;Anopheles;Laticorn;Myzorhynchus;Umbrosus;;Anopheles hunteri;FALSE;Strickland 1916;
+227;Anopheles;Laticorn;Myzorhynchus;Umbrosus;;Anopheles samarensis;FALSE;Rozeboom 1951;
+228;Anopheles;Laticorn;Myzorhynchus;Umbrosus;;Anopheles similissimus;FALSE;Strickland & Chowdhury 1927;
+229;Anopheles;Laticorn;Myzorhynchus;Umbrosus;Baezai;Anopheles baezai;FALSE;Gater 1934;
+230;Anopheles;Laticorn;Myzorhynchus;Umbrosus;Letifer;Anopheles collessi;FALSE;Reid 1963;
+232;Anopheles;Laticorn;Myzorhynchus;Umbrosus;Letifer;Anopheles roperi;FALSE;Reid 1950;
+233;Anopheles;Laticorn;Myzorhynchus;Umbrosus;Letifer;Anopheles whartoni;FALSE;Reid 1963;
+234;Anopheles;Laticorn;Myzorhynchus;Umbrosus;Seperatus;Anopheles separatus;FALSE;Leicester 1908;
+235;Anopheles;Laticorn;Myzorhynchus;Umbrosus;Umbrosus;Anopheles umbrosus;FALSE;Theobald 1903;
+236;Baimaia;;;;;Anopheles kyondawensis;FALSE;;
+237;Cellia;;;;;Anopheles rageaui;FALSE;;
+238;Cellia;Cellia;;;;Anopheles argenteolobatus;FALSE;;
+239;Cellia;Cellia;;;;Anopheles brumpti;FALSE;;
+240;Cellia;Cellia;;;;Anopheles carnevalei;FALSE;;
+241;Cellia;Cellia;;;;Anopheles cristipalpis;FALSE;;
+242;Cellia;Cellia;;;;Anopheles murphyi;FALSE;;
+243;Cellia;Cellia;;;;Anopheles pharoensis;FALSE;;
+244;Cellia;Cellia;;;;Anopheles swahilicus;FALSE;;
+245;Cellia;Cellia;;Squamosus;;Anopheles cydippis;FALSE;;
+246;Cellia;Cellia;;Squamosus;;Anopheles squamosus;FALSE;;
+247;Cellia;Myzomyia;;;;Anopheles apoci;FALSE;;
+248;Cellia;Myzomyia;;;;Anopheles azaniae;FALSE;;
+249;Cellia;Myzomyia;;;;Anopheles barberellus;FALSE;;
+250;Cellia;Myzomyia;;;;Anopheles brunnipes;FALSE;;
+251;Cellia;Myzomyia;;;;Anopheles domicola;FALSE;;
+252;Cellia;Myzomyia;;;;Anopheles dthali;FALSE;;
+253;Cellia;Myzomyia;;;;Anopheles erythraeus;FALSE;;
+254;Cellia;Myzomyia;;;;Anopheles ethiopicus;FALSE;;
+255;Cellia;Myzomyia;;;;Anopheles flavicosta;FALSE;;
+256;Cellia;Myzomyia;;;;Anopheles fontinalis;FALSE;;
+257;Cellia;Myzomyia;;;;Anopheles majidi;FALSE;;
+259;Cellia;Myzomyia;;;;Anopheles moucheti;FALSE;;bervoetsi D'Haenans 1961
+260;Cellia;Myzomyia;;;;Anopheles moucheti;FALSE;;moucheti Evans 1925
+261;Cellia;Myzomyia;;;;Anopheles moucheti;FALSE;;nigeriensis
+262;Cellia;Myzomyia;;;;Anopheles schwetzi;FALSE;;
+263;Cellia;Myzomyia;;;;Anopheles tchekedii;FALSE;;
+264;Cellia;Myzomyia;;;;Anopheles walravensi;FALSE;;
+265;Cellia;Myzomyia;;Demeilloni;;Anopheles carteri;FALSE;;
+266;Cellia;Myzomyia;;Demeilloni;;Anopheles demeilloni;FALSE;;
+267;Cellia;Myzomyia;;Demeilloni;;Anopheles freetownensis;FALSE;;
+268;Cellia;Myzomyia;;Demeilloni;;Anopheles garnhami;FALSE;;
+269;Cellia;Myzomyia;;Demeilloni;;Anopheles keniensis;FALSE;;
+270;Cellia;Myzomyia;;Demeilloni;;Anopheles lloreti;FALSE;;
+272;Cellia;Myzomyia;;Demeilloni;;Anopheles sergentii;FALSE;;macmahoni Evans 1936
+273;Cellia;Myzomyia;;Demeilloni;;Anopheles sergentii;FALSE;;sergentii Theobald 1907
+274;Cellia;Myzomyia;;Funestus;;Anopheles jeyporiensis;FALSE;;
+275;Cellia;Myzomyia;;Funestus;Aconitus;Anopheles aconitus;FALSE;;
+276;Cellia;Myzomyia;;Funestus;Aconitus;Anopheles filipinae;FALSE;;
+277;Cellia;Myzomyia;;Funestus;Aconitus;Anopheles mangyanus;FALSE;;
+278;Cellia;Myzomyia;;Funestus;Aconitus;Anopheles pampanai;FALSE;;
+279;Cellia;Myzomyia;;Funestus;Aconitus;Anopheles varuna;FALSE;;
+281;Cellia;Myzomyia;;Funestus;Funestus;Anopheles aruni;FALSE;;
+282;Cellia;Myzomyia;;Funestus;Funestus;Anopheles confusus;FALSE;;
+285;Cellia;Myzomyia;;Funestus;Funestus;Anopheles longipalpis;FALSE;;
+286;Cellia;Myzomyia;;Funestus;Funestus;Anopheles parensis;FALSE;;
+287;Cellia;Myzomyia;;Funestus;Funestus;Anopheles vaneedeni;FALSE;;
+289;Cellia;Myzomyia;;Funestus;Minimus;Anopheles leesoni;FALSE;;
+290;Cellia;Myzomyia;;Funestus;Minimus;Anopheles longipalpis;FALSE;;
+292;Cellia;Myzomyia;;Funestus;Minimus;Anopheles harrisoni;FALSE;;
+294;Cellia;Myzomyia;;Funestus;Rivulorum;Anopheles brucei;FALSE;;
+295;Cellia;Myzomyia;;Funestus;Rivulorum;Anopheles fuscivenosus;FALSE;;
+297;Cellia;Myzomyia;;Marshallii;;Anopheles austenii;FALSE;;
+298;Cellia;Myzomyia;;Marshallii;;Anopheles berghei;FALSE;;
+299;Cellia;Myzomyia;;Marshallii;;Anopheles brohieri;FALSE;;
+300;Cellia;Myzomyia;;Marshallii;;Anopheles gibbinsi;FALSE;;
+301;Cellia;Myzomyia;;Marshallii;;Anopheles hancocki;FALSE;;
+302;Cellia;Myzomyia;;Marshallii;;Anopheles hargreavesi;FALSE;;
+303;Cellia;Myzomyia;;Marshallii;;Anopheles harperi;FALSE;;
+304;Cellia;Myzomyia;;Marshallii;;Anopheles mortiauxi;FALSE;;
+305;Cellia;Myzomyia;;Marshallii;;Anopheles mousinhoi;FALSE;;
+306;Cellia;Myzomyia;;Marshallii;;Anopheles njombiensis;FALSE;;
+307;Cellia;Myzomyia;;Marshallii;;Anopheles seydeli;FALSE;;
+308;Cellia;Myzomyia;;Marshallii;Marshallii;Anopheles hughi;FALSE;;
+309;Cellia;Myzomyia;;Marshallii;Marshallii;Anopheles kosiensis;FALSE;;
+310;Cellia;Myzomyia;;Marshallii;Marshallii;Anopheles letabensis;FALSE;;
+311;Cellia;Myzomyia;;Marshallii;Marshallii;Anopheles marshallii;FALSE;;
+312;Cellia;Myzomyia;;Wellcomei;;Anopheles distinctus;FALSE;;
+313;Cellia;Myzomyia;;Wellcomei;;Anopheles erepens;FALSE;;
+314;Cellia;Myzomyia;;Wellcomei;;Anopheles theileri;FALSE;;
+315;Cellia;Myzomyia;;Wellcomei;;Anopheles wellcomei;FALSE;;
+316;Cellia;Myzomyia;;Wellcomei;;Anopheles wellcomei;FALSE;;ugandae Evans 1934
+317;Cellia;Myzomyia;;Wellcomei;;Anopheles wellcomei;FALSE;;ungujae White 1975
+318;Cellia;Myzomyia;;Wellcomei;;Anopheles wellcomei;FALSE;;wellcomei Theobald 1904
+319;Cellia;Neocellia;;;;Anopheles ainshamsi;FALSE;;
+320;Cellia;Neocellia;;;;Anopheles dancalicus;FALSE;;
+321;Cellia;Neocellia;;;;Anopheles hervyi;FALSE;;
+322;Cellia;Neocellia;;;;Anopheles jamesii;FALSE;;
+324;Cellia;Neocellia;;;;Anopheles maculipalpis;FALSE;;
+325;Cellia;Neocellia;;;;Anopheles moghulensis;FALSE;;
+326;Cellia;Neocellia;;;;Anopheles paltrinierii;FALSE;;
+327;Cellia;Neocellia;;;;Anopheles pattoni;FALSE;;
+328;Cellia;Neocellia;;;;Anopheles pretoriensis;FALSE;;
+330;Cellia;Neocellia;;;;Anopheles rufipes;FALSE;;
+331;Cellia;Neocellia;;;;Anopheles rufipes;FALSE;;broussesi Edwards 1929
+332;Cellia;Neocellia;;;;Anopheles rufipes;FALSE;;rufipes Gough 1910
+333;Cellia;Neocellia;;;;Anopheles salbaii;FALSE;;
+334;Cellia;Neocellia;;;;Anopheles splendidus;FALSE;;
+335;Cellia;Neocellia;;;;Anopheles theobaldi;FALSE;;
+338;Cellia;Neocellia;;Annularis;;Anopheles pallidus;FALSE;;
+340;Cellia;Neocellia;;Annularis;;Anopheles schueffneri;FALSE;;
+342;Cellia;Neocellia;;Annularis;Nivipes;Anopheles nivipes;FALSE;;
+343;Cellia;Neocellia;;Jamesii;;Anopheles jamesii;FALSE;;
+344;Cellia;Neocellia;;Jamesii;;Anopheles pseudojamesi;FALSE;;
+345;Cellia;Neocellia;;Jamesii;;Anopheles splendidus;FALSE;;
+346;Cellia;Neocellia;;Maculatus;;Anopheles dispar;FALSE;;
+347;Cellia;Neocellia;;Maculatus;;Anopheles greeni;FALSE;;
+348;Cellia;Neocellia;;Maculatus;;Anopheles pseudowillmori;FALSE;;
+349;Cellia;Neocellia;;Maculatus;;Anopheles rampae;FALSE;;
+350;Cellia;Neocellia;;Maculatus;;Anopheles willmori;FALSE;;
+351;Cellia;Neocellia;;Maculatus;Maculatus;Anopheles dravidicus;FALSE;;
+353;Cellia;Neocellia;;Maculatus;Sawadwongporni;Anopheles notanandai;FALSE;;
+354;Cellia;Neocellia;;Maculatus;Sawadwongporni;Anopheles sawadwongporni;FALSE;;
+355;Cellia;Neomyzomyia;;;;Anopheles amictus;FALSE;;
+356;Cellia;Neomyzomyia;;;;Anopheles annulatus;FALSE;;
+357;Cellia;Neomyzomyia;;;;Anopheles aurirostris;FALSE;;
+358;Cellia;Neomyzomyia;;;;Anopheles dualaensis;FALSE;;
+359;Cellia;Neomyzomyia;;;;Anopheles hilli;FALSE;;
+360;Cellia;Neomyzomyia;;;;Anopheles incognitus;FALSE;;
+361;Cellia;Neomyzomyia;;;;Anopheles kochi;FALSE;;
+362;Cellia;Neomyzomyia;;;;Anopheles kokhani;FALSE;;
+363;Cellia;Neomyzomyia;;;;Anopheles kolambuganensis;FALSE;;
+364;Cellia;Neomyzomyia;;;;Anopheles longirostris;FALSE;;
+365;Cellia;Neomyzomyia;;;;Anopheles mascarensis;FALSE;;
+366;Cellia;Neomyzomyia;;;;Anopheles meraukensis;FALSE;;
+367;Cellia;Neomyzomyia;;;;Anopheles novaguinensis;FALSE;;
+368;Cellia;Neomyzomyia;;;;Anopheles saungi;FALSE;;
+369;Cellia;Neomyzomyia;;;;Anopheles stookesi;FALSE;;
+370;Cellia;Neomyzomyia;;;;Anopheles watsonii;FALSE;;
+371;Cellia;Neomyzomyia;;;Annulipes;Anopheles annulipes;FALSE;;
+372;Cellia;Neomyzomyia;;;Lungae;Anopheles lungae;FALSE;;
+373;Cellia;Neomyzomyia;;;Lungae;Anopheles nataliae;FALSE;;
+374;Cellia;Neomyzomyia;;;Lungae;Anopheles solomonis;FALSE;;
+375;Cellia;Neomyzomyia;;;punctulatus;Anopheles clowi;FALSE;;
+377;Cellia;Neomyzomyia;;;punctulatus;Anopheles hinesorum;FALSE;;
+378;Cellia;Neomyzomyia;;;punctulatus;Anopheles irenicus;FALSE;;
+381;Cellia;Neomyzomyia;;;punctulatus;Anopheles torresiensis;FALSE;;
+382;Cellia;Neomyzomyia;;Ardensis;;Anopheles ardensis;FALSE;;
+383;Cellia;Neomyzomyia;;Ardensis;;Anopheles buxtoni;FALSE;;
+384;Cellia;Neomyzomyia;;Ardensis;;Anopheles cinctus;FALSE;;
+385;Cellia;Neomyzomyia;;Ardensis;;Anopheles deemingi;FALSE;;
+386;Cellia;Neomyzomyia;;Ardensis;;Anopheles eouzani;FALSE;;
+387;Cellia;Neomyzomyia;;Ardensis;;Anopheles kingi;FALSE;;
+388;Cellia;Neomyzomyia;;Ardensis;;Anopheles machardyi;FALSE;;
+389;Cellia;Neomyzomyia;;Ardensis;;Anopheles maliensis;FALSE;;
+390;Cellia;Neomyzomyia;;Ardensis;;Anopheles millecampsi;FALSE;;
+391;Cellia;Neomyzomyia;;Ardensis;;Anopheles multicinctus;FALSE;;
+392;Cellia;Neomyzomyia;;Ardensis;;Anopheles natalensis;FALSE;;
+393;Cellia;Neomyzomyia;;Ardensis;;Anopheles vernus;FALSE;;
+394;Cellia;Neomyzomyia;;Ardensis;;Anopheles vinckei;FALSE;;
+395;Cellia;Neomyzomyia;;Ardensis;Nili;Anopheles carnevalei;FALSE;;
+397;Cellia;Neomyzomyia;;Ardensis;Nili;Anopheles ovengensis;FALSE;;
+398;Cellia;Neomyzomyia;;Ardensis;Nili;Anopheles somalicus;FALSE;;
+399;Cellia;Neomyzomyia;;Kochi;;Anopheles kochi;FALSE;;
+400;Cellia;Neomyzomyia;;Leucosphyrus;;Anopheles baisasi;FALSE;;
+401;Cellia;Neomyzomyia;;Leucosphyrus;;Anopheles cristatus;FALSE;;
+402;Cellia;Neomyzomyia;;Leucosphyrus;Elegans;Anopheles elegans;FALSE;;
+403;Cellia;Neomyzomyia;;Leucosphyrus;Hackeri;Anopheles hackeri;FALSE;;
+404;Cellia;Neomyzomyia;;Leucosphyrus;Hackeri;Anopheles mirans;FALSE;;
+405;Cellia;Neomyzomyia;;Leucosphyrus;Hackeri;Anopheles pujutensis;FALSE;;
+406;Cellia;Neomyzomyia;;Leucosphyrus;Hackeri;Anopheles recens;FALSE;;
+409;Cellia;Neomyzomyia;;Leucosphyrus;;Anopheles cracens;FALSE;;
+410;Cellia;Neomyzomyia;;Leucosphyrus;;Anopheles scanloni;FALSE;;
+412;Cellia;Neomyzomyia;;Leucosphyrus;Dirus;Anopheles nemophilous;FALSE;;
+413;Cellia;Neomyzomyia;;Leucosphyrus;Dirus;Anopheles takasagoensis;FALSE;;
+415;Cellia;Neomyzomyia;;Leucosphyrus;Leucosphyrus;Anopheles introlatus;FALSE;;
+418;Cellia;Neomyzomyia;;Leucosphyrus;Riparis;Anopheles cristatus;FALSE;;
+419;Cellia;Neomyzomyia;;Leucosphyrus;Riparis;Anopheles macarthuri;FALSE;;
+420;Cellia;Neomyzomyia;;Leucosphyrus;Riparis;Anopheles riparis;FALSE;;
+421;Cellia;Neomyzomyia;;Tessellatus;;Anopheles tessellatus;FALSE;;
+422;Cellia;Neomyzomyia;;Tessellatus;;Anopheles tessellatus;FALSE;;kalawara: Stoker & Waktoedi
+423;Cellia;Neomyzomyia;;Tessellatus;;Anopheles tessellatus;FALSE;;orientalis: Swellengrebel & Swellengrebel de Graaf
+424;Cellia;Neomyzomyia;;Tessellatus;;Anopheles tessellatus;FALSE;;tessellatus: Theobald
+425;Cellia;Paramyzomyia;;Cinereus;;Anopheles azevedoi;FALSE;;
+426;Cellia;Paramyzomyia;;Cinereus;;Anopheles cinereus;FALSE;;
+427;Cellia;Paramyzomyia;;Cinereus;;Anopheles cinereus;FALSE;;cinereus Theobald 1901 
+428;Cellia;Paramyzomyia;;Cinereus;;Anopheles cinereus;FALSE;;hispaniola Theobald 1903
+429;Cellia;Paramyzomyia;;Cinereus;Turkhudi;Anopheles turkhudi;FALSE;;
+430;Cellia;Paramyzomyia;;Cinereus;Turkhudi;Anopheles turkhudi;FALSE;;telamali Saliternik & Theodor 1942
+431;Cellia;Paramyzomyia;;Cinereus;Turkhudi;Anopheles turkhudi;FALSE;;turkhudi Liston 1901
+432;Cellia;Paramyzomyia;;Listeri;;Anopheles listeri;FALSE;;
+434;Cellia;Paramyzomyia;;Listeri;;Anopheles seretsei;FALSE;;
+435;Cellia;Pyretophorus;;;;Anopheles christyi;FALSE;;
+436;Cellia;Pyretophorus;;;;Anopheles daudi;FALSE;;
+437;Cellia;Pyretophorus;;;;Anopheles indefinitus;FALSE;;
+438;Cellia;Pyretophorus;;;;Anopheles limosus;FALSE;;
+439;Cellia;Pyretophorus;;;;Anopheles litoralis;FALSE;;
+440;Cellia;Pyretophorus;;;;Anopheles ludlowae;FALSE;;
+441;Cellia;Pyretophorus;;;;Anopheles ludlowae;FALSE;;ludlowae Theobald 1903
+442;Cellia;Pyretophorus;;;;Anopheles ludlowae;FALSE;;torakala Stoker & Waktoedi 1949
+443;Cellia;Pyretophorus;;;;Anopheles parangensis;FALSE;;
+446;Cellia;Pyretophorus;;;Gambiae;Anopheles bwambae;FALSE;;
+447;Cellia;Pyretophorus;;;Gambiae;Anopheles comorensis;FALSE;;
+451;Cellia;Pyretophorus;;;Gambiae;Anopheles merus;FALSE;;
+452;Cellia;Pyretophorus;;;Gambiae;Anopheles quadriannulatus ;FALSE;;
+453;Cellia;Pyretophorus;;;Gambiae;Anopheles amharicus ;FALSE;Hunt; Wilkerson & Coetzee 2013
+455;Cellia;Pyretophorus;;;Sundaicus;Anopheles epiroticus;FALSE;;
+457;Kerteszia;;;;;Anopheles auyantepuiensis;FALSE;;
+458;Kerteszia;;;;;Anopheles bambusicolus;FALSE;;
+460;Kerteszia;;;;;Anopheles boliviensis;FALSE;;
+462;Kerteszia;;;;;Anopheles gonzalezrinconesi;FALSE;;
+464;Kerteszia;;;;;Anopheles laneanus;FALSE;;
+465;Kerteszia;;;;;Anopheles lepidotus;FALSE;;
+466;Kerteszia;;;;;Anopheles neivai;FALSE;;
+467;Kerteszia;;;;;Anopheles pholidotus;FALSE;;
+468;Kerteszia;;;;;Anopheles rollai;FALSE;;
+469;Lophopodomyia;;;;;Anopheles gilesi;FALSE;;
+470;Lophopodomyia;;;;;Anopheles gomezdelatorrei;FALSE;;
+471;Lophopodomyia;;;;;Anopheles oiketorakras;FALSE;;
+472;Lophopodomyia;;;;;Anopheles pseudotibiamaculata;FALSE;;
+473;Lophopodomyia;;;;;Anopheles squamifemur;FALSE;;
+474;Lophopodomyia;;;;;Anopheles vargasi;FALSE;;
+475;Nyssorhynchus;;;;;Anopheles dominicanus;FALSE;;
+476;Nyssorhynchus;Albimanus;;;;Anopheles noroestensis;FALSE;;
+478;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Oswaldoi;Anopheles anomalphyllus;FALSE;;
+480;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Oswaldoi;Anopheles dunhamii;FALSE;;
+481;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Oswaldoi;Anopheles evansae;FALSE;;
+482;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Oswaldoi;Anopheles galvaoi;FALSE;;
+483;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Oswaldoi;Anopheles ininii;FALSE;;
+484;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Oswaldoi;Anopheles konderi;FALSE;;
+485;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Oswaldoi;Anopheles oswaldoi;FALSE;;
+486;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Oswaldoi;Anopheles rangeli;FALSE;;
+487;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Oswaldoi;Anopheles sanctielii;FALSE;;
+488;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Oswaldoi;Anopheles trinkae;FALSE;;
+489;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Nuneztovar;Anopheles geoeldii;FALSE;;
+491;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Strodel;Anopheles alberto;FALSE;;
+493;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Strodel;Anopheles benarrochi;FALSE;;
+494;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Strodel;Anopheles rondoni;FALSE;;
+495;Nyssorhynchus;Albimanus;Oswaldoi;Oswaldoi;Strodel;Anopheles strodei;FALSE;;
+496;Nyssorhynchus;Albimanus;Oswaldoi;Triannulatus;;Anopheles halophylus;FALSE;;
+497;Nyssorhynchus;Albimanus;Oswaldoi;Triannulatus;;Anopheles triannulatus;FALSE;;
+498;Nyssorhynchus;Argyritarsis;Albitarsus;;;Anopheles rooti;FALSE;;
+499;Nyssorhynchus;Argyritarsis;Albitarsus;Albitarsus;;Anopheles albitarsis;FALSE;;
+500;Nyssorhynchus;Argyritarsis;Albitarsus;Albitarsus;;Anopheles deaneorum;FALSE;;
+501;Nyssorhynchus;Argyritarsis;Albitarsus;Albitarsus;;Anopheles janconnae;FALSE;;
+502;Nyssorhynchus;Argyritarsis;Albitarsus;Albitarsus;;Anopheles oryzalimnetes;FALSE;;
+504;Nyssorhynchus;Argyritarsis;Albitarsus;Braziliensis;;Anopheles braziliensis;FALSE;;
+505;Nyssorhynchus;Argyritarsis;Argyritarsis;Argyritarsis;;Anopheles argyitarsis;FALSE;;
+506;Nyssorhynchus;Argyritarsis;Argyritarsis;Argyritarsis;;Anopheles sawyeri;FALSE;;
+508;Nyssorhynchus;Argyritarsis;Argyritarsis;Lanei;;Anopheles lanei;FALSE;;
+509;Nyssorhynchus;Argyritarsis;Argyritarsis;Pictipennis;;Anopheles pictipennis;FALSE;;
+510;Nyssorhynchus;Myzorhynchella;;;;Anopheles antunesi;FALSE;;
+511;Nyssorhynchus;Myzorhynchella;;;;Anopheles lutzii;FALSE;;
+512;Nyssorhynchus;Myzorhynchella;;;;Anopheles nigritarsis;FALSE;;
+513;Nyssorhynchus;Myzorhynchella;;;;Anopheles parvus;FALSE;;
+514;Stethomyia;;;;;Anopheles acanthotorynus;FALSE;;
+515;Stethomyia;;;;;Anopheles canorii;FALSE;;
+516;Stethomyia;;;;;Anopheles kompi;FALSE;;
+517;Stethomyia;;;;;Anopheles nimbus;FALSE;;
+518;Stethomyia;;;;;Anopheles thomasi;FALSE;;
