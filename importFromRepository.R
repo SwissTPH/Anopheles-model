@@ -11,6 +11,10 @@ if (user=='Tom'){
 africa <- read.csv(file=paste0(dataSource,"Bionomics Africa.csv"))
 america <- read.csv(file=paste0(dataSource,"Bionomics Americas.csv"))
 asia <- read.csv(file=paste0(dataSource,"Bionomics Asia-Pacific.csv"))
+added <- read.csv(file=paste0(dataSource,"additional_bionomics.csv"),sep=";")
+bitingRhythms <- read.csv(file=paste0(dataSource,"biting_rhythm.csv"),sep=";") 
+
+# concatenate the MAP data tables
 repo <- rbind(africa,america,asia)
 
 # DEFINE:
@@ -32,9 +36,14 @@ standardise_taxon <- function(repo=repo){
 return(repo)}
 
 repo <- standardise_taxon(repo)
+added <- standardise_taxon(added)
+bitingRhythms <- standardise_taxon(bitingRhythms)
 
+### SELECT THE REQUIRED DATA AT THIS STAGE ####
 # subgrouping within species can be changed here
-repo$subgroup <- repo$site
+repo$subgroup <- paste0(repo$country,repo$site)
+added$subgroup <- paste0(added$country,added$site)
+bitingRhythms$subgroup <- paste0(bitingRhythms$country,bitingRhythms$site)
 
 # create data frame for the parameter values disaggregated by taxon and by subgroup within taxon
 dPar <- as.data.frame(table(repo$taxon,repo$subgroup))
@@ -139,9 +148,6 @@ repo$gonotrophic_cycle_days<- with(repo,ifelse(pubmed_id == 16739419 | pubmed_id
 # Calculate gravid_fed as a proportion   
 repo$gravid_fed <- repo$indoor_gravid/(repo$indoor_fed+repo$indoor_gravid)
 
-#identify papers from the MAP repository using sac rates: these will be merged in with the additional data
-sac_data <- read.csv(file=paste0(dataSource,"sac_rate.csv"),sep=";")
-sac_data <- standardise_taxon(sac_data)
 dPar$gonotrophic_cycle <- summary_mean(repo,'gonotrophic_cycle_days')$varmean
 dPar$gravid_fed <- summary_mean(repo,'gravid_fed')$varmean
 
@@ -164,7 +170,8 @@ dPar$oocyst_rate[is.na(dPar$oocyst_rate)] <- dPar$oocyst_prop[is.na(dPar$oocyst_
 
 # HOST PREFERENCE DATA
 
-# Anthropophilous index from human vs buffalo (or other animal) collections treated as a proportion
+# Anthropophilous index from human vs buffalo (or other animal) collections 
+# measured as a proportion of bites on human in a choice experiment
 
 repo$AIprop <- with(repo,ifelse(host_unit=='AI',0.01*outdoor_host,NA))
 dPar$AIprop <- summary_mean(repo,'AIprop')$varmean
@@ -182,63 +189,64 @@ dPar$Chi <- summary_ratio(repo,'HBI_total','HBI_n')$ratio
 # use values derived from n and total if available, otherwise the summary values
 dPar$Chi[is.na(dPar$Chi)] <- (summary_mean(repo,'HBI_perc')$varmean/100)[is.na(dPar$Chi)] 
 
-# MERGE IN ADDITIONAL DATA 
-added <- read.csv(file=paste0(dataSource,"additional_bionomics.csv"),sep=";")
-added <- standardise_taxon(added)
-added$subgroup <- paste0(added$country,added$site)
-
+# RESHAPE THE ADDITIONAL DATA AND CONCATENATE WITH THE  MAIN DATABASE
 library(reshape2)
-suppl <- dcast(added, taxon+subgroup~variable, value.var='value', mean)
-# concatenate the data frames while suppressing the message about coercing the factors to characters
-#at this point any duplicated data should be removed
-suppressWarnings(dPar_all <- bind_rows(dPar,suppl,sac_data))
+junk<-melt(bitingRhythms, measure.vars=varlist)
 
-# AVERAGE OVER ALL RECORDS FOR EACH TAXON
+
+suppl <- dcast(added, taxon+subgroup~variable, value.var='value', mean)
+# concatenate the MAP and additional data while suppressing the message about coercing the factors to characters
+# TODO: at this point any duplicated data should be removed
+suppressWarnings(dPar_all <- bind_rows(dPar,suppl))
+
+# AVERAGE OVER ALL RECORDS FOR EACH TAXON AND ALIGN NOTATION WITH MODEL
 
 taxon <- as.data.frame(table(dPar_all$taxon))[,1:2]
 names(taxon) <- c("taxon", "input records")
 taxon$vector <- taxonomy$Vector[match(taxon$taxon, taxonomy$taxon)]
 taxon$DailySurvival <- taxon_mean(dPar_all,'DailySurvival')$varmean 
-taxon$parity <- taxon_mean(dPar_all,'parity')$varmean
+taxon$M <- taxon_mean(dPar_all,'parity')$varmean
 taxon$sporozoite_rate <- taxon_mean(dPar_all,'sporozoite_rate')$varmean
 taxon$oocyst_rate <- taxon_mean(dPar_all,'oocyst_rate')$varmean
 taxon$Endophagy <- taxon_mean(dPar_all,'proportion_indoor_biting')$varmean
 taxon$indoor_resting_by_biting <- taxon_mean(dPar_all,'indoor_resting_by_biting')$varmean
 taxon$indoor_resting_by_all_biting <- taxon_mean(dPar_all,'indoor_resting_by_all_biting')$varmean
-taxon$proportion_indoor_resting <- taxon_mean(dPar_all,'proportion_indoor_resting')$varmean
+taxon$Endophily <- taxon_mean(dPar_all,'proportion_indoor_resting')$varmean
 taxon$Chi <- taxon_mean(dPar_all,'Chi')$varmean
 taxon$AIprop <- taxon_mean(dPar_all,'AIprop')$varmean
-taxon$sac_rate <- taxon_mean(dPar_all,'sac_rate')$varmean
+taxon$A0 <- taxon_mean(dPar_all,'sac_rate')$varmean
 taxon$gravid_fed <- taxon_mean(dPar_all,'gravid_fed')$varmean
 taxon$theta_f <- taxon_mean(dPar_all,'gonotrophic_cycle')$varmean #Total duration of the gonotrophic cycle 
 taxon$tau <- 1/taxon_mean(dPar_all,'gravid_fed')$varmean  #Duration of the resting period
 # If both the sac rate and the fed:gravid ratio are available then the duration of the gonotrophic cycle can be estimated 
 # using the Charlwood (2016) formula at the level of the taxon.
-taxon$theta_f[is.na(taxon$theta_f)] <- with(taxon,tau[is.na(theta_f)]+(1/sac_rate[is.na(theta_f)])-1) 
+taxon$theta_f[is.na(taxon$theta_f)] <- with(taxon,tau[is.na(theta_f)]+(1/A0[is.na(theta_f)])-1) 
+
+# RESHAPE AND AVERAGE THE BITING CYCLES 
+
+varlist <-c('X17.00','X18.00','X19.00','X20.00','X21.00','X22.00','X23.00',
+'X00.00','X01.00','X02.00','X03.00','X04.00','X05.00','X06.00')
+taxon_mean <-
+  
+  summary_rhythms <- melt(bitingRhythms, measure.vars=varlist)
+  summary_rhythms <- summary_rhythms %>% group_by(taxon,subgroup,sampling) %>% summarise(varmean = mean(value, na.rm = TRUE))
 
 
 ##################################################################################     
-# Add in the biting rhythm
-
-url2 <- 'http://raw.githubusercontent.com/SwissTPH/Anopheles-model/master/raw_data/bitingRhythm.xlsx'  
-
-# read species specific biting rhythms
-
-bitingRhythms <- read.csv(file=paste0(dataSource,"biting_rhythm.csv"),sep=";") 
 
 source ('calculate_Pii.r')
 
 # AVERAGING OF BITING RHYTHMS FOR ESTIMATING pii 
 
-average_biting_rhythms <- function(species, Location=NULL,	StudyID=NULL,	country=NULL,	Site=NULL,	Season=NULL){
+average_biting_rhythms <- function(species, sampling=NULL,	StudyID=NULL,	country=NULL,	site=NULL,	Season=NULL){
   rspecies <- which(biting_rhythm$species == species)
-  rLocation <- rStudyID <- rCountry <- rSite <- rSeason <- rspecies
-  if (!is.null(Location)) {rLocation <- which(biting_rhythm$Location %in% Location)} 
+  rsampling <- rStudyID <- rcountry <- rsite <- rSeason <- rspecies
+  if (!is.null(sampling)) {rsampling <- which(biting_rhythm$sampling %in% sampling)} 
   if (!is.null(StudyID)) {rStudyID <- which(biting_rhythm$StudyID %in% StudyID)}
-  if (!is.null(Country)) {rCountry <- which(biting_rhythm$country %in% country)}
-  if (!is.null(Site)) {rSite <- which(biting_rhythm$Site %in% Site)}
+  if (!is.null(country)) {rcountry <- which(biting_rhythm$country %in% country)}
+  if (!is.null(site)) {rsite <- which(biting_rhythm$site %in% site)}
   if (!is.null(Season)) {rSeason <- which(biting_rhythm$Season %in% Season)}
-  rrhythms <- biting_rhythm[Reduce(intersect,list(rspecies,rLocation,rStudyID,rCountry,rSite,rSeason)),8:20]  
+  rrhythms <- biting_rhythm[Reduce(intersect,list(rspecies,rsampling,rStudyID,rcountry,rsite,rSeason)),5:18]  
   average_rhythm <- NULL
   if (length(rrhythms[1]) == 1) average_rhythm <- rrhythms
   if (length(rrhythms[1]) > 1) average_rhythm <- colMeans(as.numeric(rrhythms), na.rm=TRUE)
@@ -248,8 +256,8 @@ average_biting_rhythms <- function(species, Location=NULL,	StudyID=NULL,	country
 
 # for the moment assume the same rhythm indoor and outdoor
 # change this to use separate indoor outdoor data where available
-taxon$Indoor <- taxon$Endophagy * average_biting_rhythms(species=vectorName)
-taxon$Outdoor <- (1 - taxon$Endophagy) * average_biting_rhythms(species=vectorName)
+taxon$Indoor <- taxon$Endophagy * average_biting_rhythms(species=taxon)
+taxon$Outdoor <- (1 - taxon$Endophagy) * average_biting_rhythms(species=taxon)
 
 
 ############### FROM HERE ON NEEDS AMENDMENT
