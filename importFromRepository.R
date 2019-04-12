@@ -189,11 +189,8 @@ dPar$Chi <- summary_ratio(repo,'HBI_total','HBI_n')$ratio
 # use values derived from n and total if available, otherwise the summary values
 dPar$Chi[is.na(dPar$Chi)] <- (summary_mean(repo,'HBI_perc')$varmean/100)[is.na(dPar$Chi)] 
 
-# RESHAPE THE ADDITIONAL DATA AND CONCATENATE WITH THE  MAIN DATABASE
+# RESHAPE THE ADDITIONAL DATA AND CONCATENATE WITH THE MAIN DATABASE
 library(reshape2)
-junk<-melt(bitingRhythms, measure.vars=varlist)
-
-
 suppl <- dcast(added, taxon+subgroup~variable, value.var='value', mean)
 # concatenate the MAP and additional data while suppressing the message about coercing the factors to characters
 # TODO: at this point any duplicated data should be removed
@@ -226,12 +223,10 @@ taxon$theta_f[is.na(taxon$theta_f)] <- with(taxon,tau[is.na(theta_f)]+(1/A0[is.n
 
 varlist <-c('X17.00','X18.00','X19.00','X20.00','X21.00','X22.00','X23.00',
 'X00.00','X01.00','X02.00','X03.00','X04.00','X05.00','X06.00')
-taxon_mean <-
-  
-  summary_rhythms <- melt(bitingRhythms, measure.vars=varlist)
-  summary_rhythms <- summary_rhythms %>% group_by(taxon,subgroup,sampling) %>% summarise(varmean = mean(value, na.rm = TRUE))
+summary_rhythms <- melt(bitingRhythms, measure.vars=varlist,variable.name='start_time')
+summary_rhythms <- summary_rhythms %>% group_by(taxon,subgroup,sampling,start_time) %>% summarise(varmean = mean(value, na.rm = TRUE))
 
-
+############### FROM HERE ON NEEDS AMENDMENT
 ##################################################################################     
 
 source ('calculate_Pii.r')
@@ -260,7 +255,7 @@ taxon$Indoor <- taxon$Endophagy * average_biting_rhythms(species=taxon)
 taxon$Outdoor <- (1 - taxon$Endophagy) * average_biting_rhythms(species=taxon)
 
 
-############### FROM HERE ON NEEDS AMENDMENT
+
 
 # POPULATE PROPORTION INDOOR RESTING 
 
