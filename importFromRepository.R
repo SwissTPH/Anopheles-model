@@ -224,12 +224,10 @@ taxon$theta_f[is.na(taxon$theta_f)] <- with(taxon,tau[is.na(theta_f)]+(1/A0[is.n
 varlist <-c('X17.00','X18.00','X19.00','X20.00','X21.00','X22.00','X23.00',
 'X00.00','X01.00','X02.00','X03.00','X04.00','X05.00','X06.00')
 summary_rhythms <- melt(bitingRhythms, measure.vars=varlist,variable.name='start_time')
-summary_rhythms <- summary_rhythms %>% group_by(taxon,subgroup,sampling,start_time) %>% summarise(varmean = mean(value, na.rm = TRUE))
+summary_rhythms <- summary_rhythms %>% group_by(taxon,sampling,start_time) %>% summarise(varmean = mean(value, na.rm = TRUE))
 
 ############### FROM HERE ON NEEDS AMENDMENT
 ##################################################################################     
-
-source ('calculate_Pii.r')
 
 # AVERAGING OF BITING RHYTHMS FOR ESTIMATING pii 
 
@@ -251,8 +249,8 @@ average_biting_rhythms <- function(species, sampling=NULL,	StudyID=NULL,	country
 
 # for the moment assume the same rhythm indoor and outdoor
 # change this to use separate indoor outdoor data where available
-taxon$Indoor <- taxon$Endophagy * average_biting_rhythms(species=taxon)
-taxon$Outdoor <- (1 - taxon$Endophagy) * average_biting_rhythms(species=taxon)
+taxon$Indoor <- taxon$Endophagy * average_biting_rhythms(species=taxon$taxon)
+taxon$Outdoor <- (1 - taxon$Endophagy) * average_biting_rhythms(species=taxon$taxon)
 
 
 
