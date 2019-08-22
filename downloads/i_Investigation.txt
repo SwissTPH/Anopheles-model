@@ -1,0 +1,106 @@
+# Investigation File generated for Scientific Data with Investigation File Authoring Tool version 0.1.0 on 10/02/2016 - This metadata file is CC0
+ONTOLOGY SOURCE REFERENCE
+Term Source Name	NCBITAXON	ENVO	ERO	OBI	NCIT
+Term Source File	http://data.bioontology.org/ontologies/NCBITAXON	http://data.bioontology.org/ontologies/ENVO	http://data.bioontology.org/ontologies/ERO	http://data.bioontology.org/ontologies/OBI	http://data.bioontology.org/ontologies/NCIT
+Term Source Version	2015AA	releases/2014-09-16	2013-08-02	2014-08-18	15.05d
+Term Source Description	National Center for Biotechnology Information (NCBI) Organismal Classification	Environment Ontology	Eagle-I Research Resource Ontology	Ontology for Biomedical Investigations	National Cancer Institute Thesaurus
+INVESTIGATION
+Investigation Identifier
+Investigation Title
+Investigation Description
+Investigation Submission Date
+Investigation Public Release Date
+INVESTIGATION PUBLICATIONS
+Investigation PubMed ID
+Investigation Publication DOI
+Investigation Publication Author List
+Investigation Publication Title
+Investigation Publication Status
+Investigation Publication Status Term Accession Number
+Investigation Publication Status Term Source REF
+INVESTIGATION CONTACTS
+Investigation Person Last Name
+Investigation Person Mid Initials
+Investigation Person First Name
+Investigation Person Address
+Investigation Person Phone
+Investigation Person Fax
+Investigation Person Email
+Investigation Person Affiliation
+Investigation Person Roles
+Investigation Person Roles Term Accession Number
+Investigation Person Roles Term Source REF
+STUDY
+Study Identifier	10.1038/sdata.2016.14
+Study Title	A global bionomic database for the dominant vectors of human malaria
+Study Submission Date	18/11/2015
+Study Public Release Date	01/03/2016
+Study Description	http://www.nature.com/articles/sdata201614#abstract
+Study File Name	s_study_Sinka.txt
+Comment[Subject Keywords]	//;//;///;//
+Comment[Manuscript Licence]	CC BY-4.0
+Comment[Experimental Metadata Licence]	CC0
+Comment[Supplementary Information File Name]	
+Comment[Supplementary Information File Type]	x-zip-compressed
+Comment[Supplementary Information File URL]	http://www.nature.com/articles/sdata201614#supplementary-information
+Comment[Data Repository]	Dryad Digital Repository
+Comment[Data Record Accession]	doi:10.5061/dryad.49p7f
+Comment[Data Record URI]	http://dx.doi.org/10.5061/dryad.49p7f
+STUDY DESIGN DESCRIPTORS
+Study Design Type	database creation objective
+Study Design Type Term Accession Number	http://www.ebi.ac.uk/efo/swo/SWO_0000509
+Study Design Type Term Source REF	ERO
+STUDY PUBLICATIONS
+Study PubMed ID	""	""	""
+Study Publication DOI	doi:10.1186/1756-3305-4-89	doi:10.1186/1756-3305-3-72	doi:10.1186/1756-3305-3-117
+Study Publication Author List	""	""	""
+Study Publication Title	""	""	""
+Study Publication Status	published	published	published
+Study Publication Status Term Accession Number			
+Study Publication Status Term Source REF			
+STUDY FACTORS
+Study Factor Name	region
+Study Factor Type	geographic location
+Study Factor Type Term Accession Number	GAZ:00000448
+Study Factor Type Term Source REF	OBI
+STUDY ASSAYS
+Study Assay Measurement Type	bionomics
+Study Assay Measurement Type Term Accession Number	""
+Study Assay Measurement Type Term Source REF	""
+Study Assay Technology Type	digital curation
+Study Assay Technology Type Term Accession Number	OBI:0302914
+Study Assay Technology Type Term Source REF	OBI
+Study Assay Technology Platform	""
+Study Assay File Name	a_assay_Sinka.txt
+STUDY PROTOCOLS
+Study Protocol Name	Published data searches	Data extraction	Site geo-positioning	Bionomics datasets
+Study Protocol Type	selection	data item extraction from journal article	Epidemiology, Geographic Location	digital curation
+Study Protocol Type Term Accession Number	OBI:0001928	IAO:0000443	NCIT:C18770	OBI:0302914
+Study Protocol Type Term Source REF	OBI	OBI	NCIT	OBI
+Study Protocol Description				
+Study Protocol URI	""	""	""	""
+Study Protocol Version				
+Study Protocol Parameters Name	""	""	""	""
+Study Protocol Parameters Name Term Accession Number	""	""	""	""
+Study Protocol Parameters Name Term Source REF	""	""	""	""
+Study Protocol Components Name	""	""	""	""
+Study Protocol Components Type	""	""	""	""
+Study Protocol Components Type Term Accession Number	""	""	""	""
+Study Protocol Components Type Term Source REF	""	""	""	""
+STUDY CONTACTS
+Study Person Last Name	Massey	Garrod	Wiebe	Henry	Huang	Moyes	Sinka
+Study Person First Name	N. Claire	Gala	Antoinette	Andrew J.	Zhi	Catherine L.	Marianne E.
+Study Person Mid Initials							
+Study Person Email	""	""	""	""	""	catherinemoyes@gmail.com	marianne.sinka@gmail.com
+Study Person Phone							
+Study Person Fax							
+Study Person Address							
+Study Person Affiliation	Spatial Ecology & Epidemiology Group, Wellcome Trust Centre for Human Genetics, University of Oxford, Oxford, OX3 7BN, UK	Spatial Ecology & Epidemiology Group, Wellcome Trust Centre for Human Genetics, University of Oxford, Oxford, OX3 7BN, UK	Spatial Ecology & Epidemiology Group, Wellcome Trust Centre for Human Genetics, University of Oxford, Oxford, OX3 7BN, UK	Spatial Ecology & Epidemiology Group, Department of Zoology, University of Oxford, Oxford, OX1 3PS, UK	Spatial Ecology & Epidemiology Group, Department of Zoology, University of Oxford, Oxford, OX1 3PS, UK	Spatial Ecology & Epidemiology Group, Wellcome Trust Centre for Human Genetics, University of Oxford, Oxford, OX3 7BN, UK	Spatial Ecology & Epidemiology Group, Wellcome Trust Centre for Human Genetics, University of Oxford, Oxford, OX3 7BN, UK
+Study Person Roles							
+Study Person Roles Term Accession Number							
+Study Person Roles Term Source REF							
+Comment[Study Person ORCID]							
+Comment[Funder]							
+Comment[FundRef ID]							
+Comment[Funder Term Source REF]							
+Comment[Grant Identifier]							
