@@ -1,32 +1,31 @@
 library(dplyr)
 
-
 user <- 'Tom'
 if (user=='Tom'){
-  dataSource <- "C:/git_repos/Anopheles-model/downloads/"  
-  scriptPath  = 'C:/git_repos/Anopheles-model/'
+  dataSource <- "C:/git_repos/Anopheles-model/downloads/"
+  scriptPath  = 'C:/git_repos/Anopheles-model/data_processing/'
 }
 
-# READ THE DATA 
+# READ THE DATA
 africa <- read.csv(file=paste0(dataSource,"Bionomics Africa.csv"))
 america <- read.csv(file=paste0(dataSource,"Bionomics Americas.csv"))
 asia <- read.csv(file=paste0(dataSource,"Bionomics Asia-Pacific.csv"))
 added <- read.csv(file=paste0(dataSource,"additional_bionomics.csv"),sep=";")
-bitingRhythms <- read.csv(file=paste0(dataSource,"biting_rhythm.csv"),sep=";") 
+bitingRhythms <- read.csv(file=paste0(dataSource,"biting_rhythm.csv"),sep=";")
 
 # concatenate the MAP data tables
 repo <- rbind(africa,america,asia)
 
 # DEFINE:
 #           taxon- the data will be averaged across subgroups for each level of taxon
-#                     by default the groups are species   
+#                     by default the groups are species
 #           subgroup- the data within each level of taxon will be aggregated by subgroup
 #                     by default the subgroups are sites
 
 # STANDARDISE THE ORTHOGRAPHY OF THE TAXA
 # map onto the taxonomy file to standardise spelling of species and species complexes
 # species complexes are mapped onto the nominate species
-species_mapping <- as.data.frame(read.csv(file=paste0(dataSource,"species_mapping.csv"),sep=";"))  
+species_mapping <- as.data.frame(read.csv(file=paste0(dataSource,"species_mapping.csv"),sep=";"))
 taxonomy <- as.data.frame(read.csv(file=paste0(dataSource,"taxonomy.csv"),sep=";"))
 taxonomy$taxon <- as.character(taxonomy$taxon)
 
@@ -62,35 +61,35 @@ weightedMean <- function(x1,w1,x2=0,w2=0,x3=0,w3=0){
   return((x1*w1 + x2*w2 +x3*w3)/(w1+w2+w3))
 }
 
-# Arithmetic mean from multiple records in the same subgroup 
+# Arithmetic mean from multiple records in the same subgroup
 
 summary_mean <-function(df,var){
   df$var <- df[[var]]
-  df$counted <- ifelse(is.na(df$var),0,1) 
-  summary <- df %>% 
-                  group_by(taxon,subgroup) %>% 
+  df$counted <- ifelse(is.na(df$var),0,1)
+  summary <- df %>%
+                  group_by(taxon,subgroup) %>%
                   summarise(varmean = mean(var, na.rm = TRUE),
                             obs= sum(counted))
 return(summary)}
 
-# Arithmetic mean from multiple records in the same taxon 
+# Arithmetic mean from multiple records in the same taxon
 taxon_mean <-function(df,var){
-  df$var <- df[[var]]  
-  summary <- df %>% 
-    group_by(taxon) %>% 
+  df$var <- df[[var]]
+  summary <- df %>%
+    group_by(taxon) %>%
     summarise(varmean = mean(var, na.rm = TRUE))
   return(summary)}
 
-# Calculate ratio from multiple records in the same subgroup with totals and n values 
+# Calculate ratio from multiple records in the same subgroup with totals and n values
 summary_ratio <-function(df,total_var,n_var){
   df$total_var <- df[[total_var]]
   df$n_var <- df[[n_var]]
   df$n_var[is.na(df$n_var) | is.na(df$total_var)] <- NA
   df$total_var[is.na(df$n_var)] <- NA
-  df$counted <- ifelse(is.na(df$total_var),0,1) 
-  summary <- as.data.frame(df %>%  
-                             group_by(taxon,subgroup) %>% 
-                             summarise(sum_total_var = sum(total_var, na.rm = TRUE), 
+  df$counted <- ifelse(is.na(df$total_var),0,1)
+  summary <- as.data.frame(df %>%
+                             group_by(taxon,subgroup) %>%
+                             summarise(sum_total_var = sum(total_var, na.rm = TRUE),
                                        sum_n_var = sum(n_var, na.rm = TRUE),
                                        obs= sum(counted)))
   summary$ratio <- summary$sum_n_var/summary$sum_total_var
@@ -102,22 +101,22 @@ mean_proportion <- function(df,total_var,n_var,percent_var){
   df$n_var <- df[[n_var]]
   df$percent_var <- df[[percent_var]]
   df1 <- summary_ratio(df,total_var,n_var)
-  df$proportion_var <- ifelse(is.na(df$total_var),NA,df$percent_var/100) 
+  df$proportion_var <- ifelse(is.na(df$total_var),NA,df$percent_var/100)
   df2 <- summary_mean(df,'proportion_var')
   mean_proportion <- (df1$ratio * df1$obs +df2$varmean * df2$obs)/(df1$obs + df2$obs)
-return(mean_proportion)}  
+return(mean_proportion)}
 
 # Compute the inputs used by the R package separately for each taxon and subgroup
 
 # VECTOR BIOLOGY
 
-# Parous rate   
+# Parous rate
 
 # clean up data with very small totals
 repo$parity_total[repo$parity_total<6] <- NA
 repo$parity_n[is.na(repo$parity_n)] <- with(repo, parity_percent[is.na(parity_n)]*parity_total[is.na(parity_n)]/100)
 dPar$parity <- summary_ratio(repo,'parity_total','parity_n')$ratio
-dPar$DailySurvival <- summary_mean(repo,'daily_survival_rate_percent')$varmean/100 
+dPar$DailySurvival <- summary_mean(repo,'daily_survival_rate_percent')$varmean/100
 
 # HUMAN BITING AND RESTING
 
@@ -142,10 +141,10 @@ repo$proportion_indoor_resting <- repo$indoor_total/(repo$indoor_total + repo$ou
 dPar$proportion_indoor_resting <- summary_mean(repo,'proportion_indoor_resting')$varmean
 
 # DURATION OF GONOTROPHIC CYCLE
-# 
-# Exclude estimates of gonotrophic cycle based only on fed:gravid ratio 
+#
+# Exclude estimates of gonotrophic cycle based only on fed:gravid ratio
 repo$gonotrophic_cycle_days<- with(repo,ifelse(pubmed_id == 16739419 | pubmed_id == 20482824,NA,gonotrophic_cycle_days))
-# Calculate gravid_fed as a proportion   
+# Calculate gravid_fed as a proportion
 repo$gravid_fed <- repo$indoor_gravid/(repo$indoor_fed+repo$indoor_gravid)
 
 dPar$gonotrophic_cycle <- summary_mean(repo,'gonotrophic_cycle_days')$varmean
@@ -170,7 +169,7 @@ dPar$oocyst_rate[is.na(dPar$oocyst_rate)] <- dPar$oocyst_prop[is.na(dPar$oocyst_
 
 # HOST PREFERENCE DATA
 
-# Anthropophilous index from human vs buffalo (or other animal) collections 
+# Anthropophilous index from human vs buffalo (or other animal) collections
 # measured as a proportion of bites on human in a choice experiment
 
 repo$AIprop <- with(repo,ifelse(host_unit=='AI',0.01*outdoor_host,NA))
@@ -182,12 +181,12 @@ repo$HBI_total <- rowSums(subset(repo, select = c(indoor_host_total,outdoor_host
 repo$HBI_n <- rowSums(subset(repo, select = c(indoor_host_n,outdoor_host_n,combined_host_n)), na.rm = TRUE)
 repo$HBI_perc <- rowMeans(subset(repo, select = c(indoor_host,outdoor_host,combined_host)), na.rm = TRUE)
 # set data to missing if the recorded values are not HBI
-repo$HBI_total[repo$host_unit[substr(repo$host_unit,1,3) != 'HBI']] <- NA 
-repo$HBI_total[repo$HBI_total==0] <- NA 
-repo$HBI_perc[repo$host_unit[substr(repo$host_unit,1,3) != 'HBI']] <- NA 
+repo$HBI_total[repo$host_unit[substr(repo$host_unit,1,3) != 'HBI']] <- NA
+repo$HBI_total[repo$HBI_total==0] <- NA
+repo$HBI_perc[repo$host_unit[substr(repo$host_unit,1,3) != 'HBI']] <- NA
 dPar$Chi <- summary_ratio(repo,'HBI_total','HBI_n')$ratio
 # use values derived from n and total if available, otherwise the summary values
-dPar$Chi[is.na(dPar$Chi)] <- (summary_mean(repo,'HBI_perc')$varmean/100)[is.na(dPar$Chi)] 
+dPar$Chi[is.na(dPar$Chi)] <- (summary_mean(repo,'HBI_perc')$varmean/100)[is.na(dPar$Chi)]
 
 # RESHAPE THE ADDITIONAL DATA AND CONCATENATE WITH THE MAIN DATABASE
 library(reshape2)
@@ -201,7 +200,7 @@ suppressWarnings(dPar_all <- bind_rows(dPar,suppl))
 taxon <- as.data.frame(table(dPar_all$taxon))[,1:2]
 names(taxon) <- c("taxon", "input records")
 taxon$vector <- taxonomy$Vector[match(taxon$taxon, taxonomy$taxon)]
-taxon$DailySurvival <- taxon_mean(dPar_all,'DailySurvival')$varmean 
+taxon$DailySurvival <- taxon_mean(dPar_all,'DailySurvival')$varmean
 taxon$M <- taxon_mean(dPar_all,'parity')$varmean
 taxon$sporozoite_rate <- taxon_mean(dPar_all,'sporozoite_rate')$varmean
 taxon$oocyst_rate <- taxon_mean(dPar_all,'oocyst_rate')$varmean
@@ -213,13 +212,13 @@ taxon$Chi <- taxon_mean(dPar_all,'Chi')$varmean
 taxon$AIprop <- taxon_mean(dPar_all,'AIprop')$varmean
 taxon$A0 <- taxon_mean(dPar_all,'sac_rate')$varmean
 taxon$gravid_fed <- taxon_mean(dPar_all,'gravid_fed')$varmean
-taxon$theta_f <- taxon_mean(dPar_all,'gonotrophic_cycle')$varmean #Total duration of the gonotrophic cycle 
+taxon$theta_f <- taxon_mean(dPar_all,'gonotrophic_cycle')$varmean #Total duration of the gonotrophic cycle
 taxon$tau <- 1/taxon_mean(dPar_all,'gravid_fed')$varmean  #Duration of the resting period
-# If both the sac rate and the fed:gravid ratio are available then the duration of the gonotrophic cycle can be estimated 
+# If both the sac rate and the fed:gravid ratio are available then the duration of the gonotrophic cycle can be estimated
 # using the Charlwood (2016) formula at the level of the taxon.
-taxon$theta_f[is.na(taxon$theta_f)] <- with(taxon,tau[is.na(theta_f)]+(1/A0[is.na(theta_f)])-1) 
+taxon$theta_f[is.na(taxon$theta_f)] <- with(taxon,tau[is.na(theta_f)]+(1/A0[is.na(theta_f)])-1)
 
-# RESHAPE AND AVERAGE THE BITING CYCLES 
+# RESHAPE AND AVERAGE THE BITING CYCLES
 
 varlist <-c('X17.00','X18.00','X19.00','X20.00','X21.00','X22.00','X23.00',
 'X00.00','X01.00','X02.00','X03.00','X04.00','X05.00','X06.00')
@@ -227,23 +226,23 @@ summary_rhythms <- melt(bitingRhythms, measure.vars=varlist,variable.name='start
 summary_rhythms <- summary_rhythms %>% group_by(taxon,sampling,start_time) %>% summarise(varmean = mean(value, na.rm = TRUE))
 
 ############### FROM HERE ON NEEDS AMENDMENT
-##################################################################################     
+##################################################################################
 
-# AVERAGING OF BITING RHYTHMS FOR ESTIMATING pii 
+# AVERAGING OF BITING RHYTHMS FOR ESTIMATING pii
 
 average_biting_rhythms <- function(species, sampling=NULL,	StudyID=NULL,	country=NULL,	site=NULL,	Season=NULL){
   rspecies <- which(biting_rhythm$species == species)
   rsampling <- rStudyID <- rcountry <- rsite <- rSeason <- rspecies
-  if (!is.null(sampling)) {rsampling <- which(biting_rhythm$sampling %in% sampling)} 
+  if (!is.null(sampling)) {rsampling <- which(biting_rhythm$sampling %in% sampling)}
   if (!is.null(StudyID)) {rStudyID <- which(biting_rhythm$StudyID %in% StudyID)}
   if (!is.null(country)) {rcountry <- which(biting_rhythm$country %in% country)}
   if (!is.null(site)) {rsite <- which(biting_rhythm$site %in% site)}
   if (!is.null(Season)) {rSeason <- which(biting_rhythm$Season %in% Season)}
-  rrhythms <- biting_rhythm[Reduce(intersect,list(rspecies,rsampling,rStudyID,rcountry,rsite,rSeason)),5:18]  
+  rrhythms <- biting_rhythm[Reduce(intersect,list(rspecies,rsampling,rStudyID,rcountry,rsite,rSeason)),5:18]
   average_rhythm <- NULL
   if (length(rrhythms[1]) == 1) average_rhythm <- rrhythms
   if (length(rrhythms[1]) > 1) average_rhythm <- colMeans(as.numeric(rrhythms), na.rm=TRUE)
-  return(average_rhythm)  
+  return(average_rhythm)
 }
 
 
@@ -255,7 +254,7 @@ taxon$Outdoor <- (1 - taxon$Endophagy) * average_biting_rhythms(species=taxon$ta
 
 
 
-# POPULATE PROPORTION INDOOR RESTING 
+# POPULATE PROPORTION INDOOR RESTING
 
 # Select endophily data
 bionomicsData$variable[bionomicsData$variable == 'IR/IB'] <- 'IR/(totalB)'
