@@ -1,3 +1,8 @@
+# Creates input databases for Anopheles model
+# by summarising data from the MAP bionomics compilation and
+# additional data extracted at Swiss TPH
+# written by Tom Smith & Monica Golumbeanu, 2019
+#
 library(dplyr)
 
 user <- 'Tom'
@@ -70,7 +75,37 @@ summary_mean <-function(df,var){
                   group_by(taxon,subgroup) %>%
                   summarise(varmean = mean(var, na.rm = TRUE),
                             obs= sum(counted))
+
 return(summary)}
+
+# Arithmetic mean from multiple records in the same subgroup
+
+summary_median <-function(df,var){
+  df$var <- df[[var]]
+  df$counted <- ifelse(is.na(df$var),0,1)
+  summary <- df %>%
+    group_by(taxon,subgroup) %>%
+    summarise(varmedian = median(var, na.rm = TRUE),
+              obs= sum(counted))
+
+  return(summary)}
+
+# Plot scatters of variable by taxon
+scatter_by_taxon <- function(df,var){
+  df$var <- df[[var]]
+p <- ggplot(df, aes(x=factor(taxon), y=var)) +
+  geom_jitter(position=position_jitter(width=0.3, height=0.2), alpha=0.9) +
+  geom_boxplot(alpha = 0.5, show.legend = FALSE) +
+  theme(strip.text.x = element_text(size=9, color="black", face="bold"))
+return(p)}
+
+# Median from multiple records in the same taxon
+taxon_median <-function(df,var){
+  df$var <- df[[var]]
+  summary <- df %>%
+    group_by(taxon) %>%
+    summarise(varmedian = median(var, na.rm = TRUE))
+  return(summary)}
 
 # Arithmetic mean from multiple records in the same taxon
 taxon_mean <-function(df,var){
@@ -116,29 +151,29 @@ return(mean_proportion)}
 repo$parity_total[repo$parity_total<6] <- NA
 repo$parity_n[is.na(repo$parity_n)] <- with(repo, parity_percent[is.na(parity_n)]*parity_total[is.na(parity_n)]/100)
 dPar$parity <- summary_ratio(repo,'parity_total','parity_n')$ratio
-dPar$DailySurvival <- summary_mean(repo,'daily_survival_rate_percent')$varmean/100
+dPar$DailySurvival <- summary_median(repo,'daily_survival_rate_percent')$varmedian/100
 
 # HUMAN BITING AND RESTING
 
 # transform both ratios and percentages into proportions
 repo$proportion_indoor_biting <- with(repo,ifelse(indoor_outdoor_biting_units=="I:O",
                                     indoor_biting/(1+indoor_biting),indoor_biting/100))
-dPar$proportion_indoor_biting <- summary_mean(repo,'proportion_indoor_biting')$varmean
+dPar$proportion_indoor_biting <- summary_median(repo,'proportion_indoor_biting')$varmedian
 
 # Use the ratio of resting to biting data to estimate endophily, if there are no direct estimates
 # indoor resting (collection per man hour) by total HBR
 repo$indoor_total[repo$indoor_resting_sampling != 'HRI'] <- NA
 repo$indoor_resting_by_all_biting <- repo$indoor_total/(repo$indoor_hbr + repo$outdoor_hbr)
-dPar$indoor_resting_by_all_biting <- summary_mean(repo,'indoor_resting_by_all_biting')$varmean
+dPar$indoor_resting_by_all_biting <- summary_median(repo,'indoor_resting_by_all_biting')$varmedian
 
 # ratio of indoor resting (collection per man hour) by indoor HBR
 repo$indoor_resting_by_biting <- repo$indoor_total/repo$indoor_hbr
 repo$indoor_resting_by_biting[repo$resting_unit !='per man hour'] <- NA
-dPar$indoor_resting_by_biting <- summary_mean(repo,'indoor_resting_by_biting')$varmean
+dPar$indoor_resting_by_biting <- summary_median(repo,'indoor_resting_by_biting')$varmedian
 
 # proportion indoor resting estimated directly (usually from exit traps)
 repo$proportion_indoor_resting <- repo$indoor_total/(repo$indoor_total + repo$outdoor_total)
-dPar$proportion_indoor_resting <- summary_mean(repo,'proportion_indoor_resting')$varmean
+dPar$proportion_indoor_resting <- summary_median(repo,'proportion_indoor_resting')$varmedian
 
 # DURATION OF GONOTROPHIC CYCLE
 #
@@ -147,23 +182,23 @@ repo$gonotrophic_cycle_days<- with(repo,ifelse(pubmed_id == 16739419 | pubmed_id
 # Calculate gravid_fed as a proportion
 repo$gravid_fed <- repo$indoor_gravid/(repo$indoor_fed+repo$indoor_gravid)
 
-dPar$gonotrophic_cycle <- summary_mean(repo,'gonotrophic_cycle_days')$varmean
-dPar$gravid_fed <- summary_mean(repo,'gravid_fed')$varmean
+dPar$gonotrophic_cycle <- summary_median(repo,'gonotrophic_cycle_days')$varmedian
+dPar$gravid_fed <- summary_median(repo,'gravid_fed')$varmedian
 
 
 # VECTOR INFECTION RATE
 
 dPar$sr_dissection <- summary_ratio(repo,'sr_dissection_total','sr_dissection_n')$ratio
-dPar$sr_dissection_prop <- summary_mean(repo,'sr_dissection_percent')$varmean/100
+dPar$sr_dissection_prop <- summary_median(repo,'sr_dissection_percent')$varmedian/100
 dPar$sr_csp <- summary_ratio(repo,'sr_csp_total','sr_csp_n')$ratio
-dPar$sr_csp_prop <- summary_mean(repo,'sr_csp_percent')$varmean/100
+dPar$sr_csp_prop <- summary_median(repo,'sr_csp_percent')$varmedian/100
 dPar$sporozoite_rate_prop <- rowMeans(subset(dPar, select = c(sr_dissection_prop,sr_csp_prop)), na.rm = TRUE)
 dPar$sporozoite_rate <- rowMeans(subset(dPar, select = c(sr_dissection,sr_csp)), na.rm = TRUE)
 # use values derived from n and total if available, otherwise the summary values
 dPar$sporozoite_rate[is.na(dPar$sporozoite_rate) || (dPar$sporozoite_rate > 1)] <- dPar$sporozoite_rate_prop[is.na(dPar$sporozoite_rate) || (dPar$sporozoite_rate > 1)]
 
 dPar$oocyst_rate <- summary_ratio(repo,'oocyst_total','oocyst_n')$ratio
-dPar$oocyst_prop <- summary_mean(repo,'oocyst_percent')$varmean/100
+dPar$oocyst_prop <- summary_median(repo,'oocyst_percent')$varmedian/100
 # use values derived from n and total if available, otherwise the summary values
 dPar$oocyst_rate[is.na(dPar$oocyst_rate)] <- dPar$oocyst_prop[is.na(dPar$oocyst_rate)]
 
@@ -173,7 +208,7 @@ dPar$oocyst_rate[is.na(dPar$oocyst_rate)] <- dPar$oocyst_prop[is.na(dPar$oocyst_
 # measured as a proportion of bites on human in a choice experiment
 
 repo$AIprop <- with(repo,ifelse(host_unit=='AI',0.01*outdoor_host,NA))
-dPar$AIprop <- summary_mean(repo,'AIprop')$varmean
+dPar$AIprop <- summary_median(repo,'AIprop')$varmedian
 
 # Human blood index
 
@@ -186,11 +221,11 @@ repo$HBI_total[repo$HBI_total==0] <- NA
 repo$HBI_perc[repo$host_unit[substr(repo$host_unit,1,3) != 'HBI']] <- NA
 dPar$Chi <- summary_ratio(repo,'HBI_total','HBI_n')$ratio
 # use values derived from n and total if available, otherwise the summary values
-dPar$Chi[is.na(dPar$Chi)] <- (summary_mean(repo,'HBI_perc')$varmean/100)[is.na(dPar$Chi)]
+dPar$Chi[is.na(dPar$Chi)] <- (summary_median(repo,'HBI_perc')$varmedian/100)[is.na(dPar$Chi)]
 
 # RESHAPE THE ADDITIONAL DATA AND CONCATENATE WITH THE MAIN DATABASE
 library(reshape2)
-suppl <- dcast(added, taxon+subgroup~variable, value.var='value', mean)
+suppl <- dcast(added, taxon+subgroup~variable, value.var='value', median)
 # concatenate the MAP and additional data while suppressing the message about coercing the factors to characters
 # TODO: at this point any duplicated data should be removed
 suppressWarnings(dPar_all <- bind_rows(dPar,suppl))
@@ -200,20 +235,20 @@ suppressWarnings(dPar_all <- bind_rows(dPar,suppl))
 taxon <- as.data.frame(table(dPar_all$taxon))[,1:2]
 names(taxon) <- c("taxon", "input records")
 taxon$vector <- taxonomy$Vector[match(taxon$taxon, taxonomy$taxon)]
-taxon$DailySurvival <- taxon_mean(dPar_all,'DailySurvival')$varmean
-taxon$M <- taxon_mean(dPar_all,'parity')$varmean
-taxon$sporozoite_rate <- taxon_mean(dPar_all,'sporozoite_rate')$varmean
-taxon$oocyst_rate <- taxon_mean(dPar_all,'oocyst_rate')$varmean
-taxon$Endophagy <- taxon_mean(dPar_all,'proportion_indoor_biting')$varmean
-taxon$indoor_resting_by_biting <- taxon_mean(dPar_all,'indoor_resting_by_biting')$varmean
-taxon$indoor_resting_by_all_biting <- taxon_mean(dPar_all,'indoor_resting_by_all_biting')$varmean
-taxon$Endophily <- taxon_mean(dPar_all,'proportion_indoor_resting')$varmean
-taxon$Chi <- taxon_mean(dPar_all,'Chi')$varmean
-taxon$AIprop <- taxon_mean(dPar_all,'AIprop')$varmean
-taxon$A0 <- taxon_mean(dPar_all,'sac_rate')$varmean
-taxon$gravid_fed <- taxon_mean(dPar_all,'gravid_fed')$varmean
-taxon$theta_f <- taxon_mean(dPar_all,'gonotrophic_cycle')$varmean #Total duration of the gonotrophic cycle
-taxon$tau <- 1/taxon_mean(dPar_all,'gravid_fed')$varmean  #Duration of the resting period
+taxon$DailySurvival <- taxon_median(dPar_all,'DailySurvival')$varmedian
+taxon$M <- taxon_median(dPar_all,'parity')$varmedian
+taxon$sporozoite_rate <- taxon_median(dPar_all,'sporozoite_rate')$varmedian
+taxon$oocyst_rate <- taxon_median(dPar_all,'oocyst_rate')$varmedian
+taxon$Endophagy <- taxon_median(dPar_all,'proportion_indoor_biting')$varmedian
+taxon$indoor_resting_by_biting <- taxon_median(dPar_all,'indoor_resting_by_biting')$varmedian
+taxon$indoor_resting_by_all_biting <- taxon_median(dPar_all,'indoor_resting_by_all_biting')$varmedian
+taxon$Endophily <- taxon_median(dPar_all,'proportion_indoor_resting')$varmedian
+taxon$Chi <- taxon_median(dPar_all,'Chi')$varmedian
+taxon$AIprop <- taxon_median(dPar_all,'AIprop')$varmedian
+taxon$A0 <- taxon_median(dPar_all,'sac_rate')$varmedian
+taxon$gravid_fed <- taxon_median(dPar_all,'gravid_fed')$varmedian
+taxon$theta_f <- taxon_median(dPar_all,'gonotrophic_cycle')$varmedian #Total duration of the gonotrophic cycle
+taxon$tau <- 1/taxon_median(dPar_all,'gravid_fed')$varmedian  #Duration of the resting period
 # If both the sac rate and the fed:gravid ratio are available then the duration of the gonotrophic cycle can be estimated
 # using the Charlwood (2016) formula at the level of the taxon.
 taxon$theta_f[is.na(taxon$theta_f)] <- with(taxon,tau[is.na(theta_f)]+(1/A0[is.na(theta_f)])-1)
@@ -223,7 +258,7 @@ taxon$theta_f[is.na(taxon$theta_f)] <- with(taxon,tau[is.na(theta_f)]+(1/A0[is.n
 varlist <-c('X17.00','X18.00','X19.00','X20.00','X21.00','X22.00','X23.00',
 'X00.00','X01.00','X02.00','X03.00','X04.00','X05.00','X06.00')
 summary_rhythms <- melt(bitingRhythms, measure.vars=varlist,variable.name='start_time')
-summary_rhythms <- summary_rhythms %>% group_by(taxon,sampling,start_time) %>% summarise(varmean = mean(value, na.rm = TRUE))
+summary_rhythms <- summary_rhythms %>% group_by(taxon,sampling,start_time) %>% summarise(varmedian = median(value, na.rm = TRUE))
 
 ############### FROM HERE ON NEEDS AMENDMENT
 ##################################################################################
